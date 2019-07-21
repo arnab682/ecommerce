@@ -103,7 +103,7 @@ class SubscriberController extends Controller
       $data = $request->all();
       $subscriber->update($data);
 
-      return redirect('Subscriber')->with('message','Subscriber Updated !');
+      return redirect('subscriber')->with('message','Subscriber Updated !');
     }
 
     /**
@@ -117,10 +117,10 @@ class SubscriberController extends Controller
       try{
           $subscriber = Subscriber::findOrFail($id);
           $subscriber->delete();
-          return redirect()->route('Subscriber.index')->with('message','Subscriber is Deleted Successfully.');
+          return redirect()->route('subscriber.index')->with('message','Subscriber is Deleted Successfully.');
         }catch(QueryException $e){
           return redirect()
-              ->route('Subscriber.index')
+              ->route('subscriber.index')
               ->withErrors($e->getMessage());
         }
     }

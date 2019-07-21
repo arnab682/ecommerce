@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-  Banner
+  subscriber
 @endsection
 
 @section('content')
@@ -17,7 +17,7 @@
           </div>
             <div class="card">
                 <div class="card-header bg-light">
-                    Banner Index :
+                    Subscriber Index :
                 </div>
 
                 <div class="card-body">
@@ -39,10 +39,16 @@
                <tbody>
                  <tr>
                    <td>{{++$sl}}</td>
-                   <td>{{$subscriber->email}}</td>
+                   <td><a href="{{route('subscriber.show',$subscriber->id)}}">{{$subscriber->email}}</a></td>
                    <td>{{$subscriber->is_subcribed}}</td>
                    <td>{{$subscriber->reason}}</td>
-                   <th>Edit | Delete</th>
+                   <td></a>
+                        <a href="{{route('subscriber.edit',$subscriber->id)}}">Edit</a>|
+                       {!! Form::open(array('url' => ['subscriber',$subscriber->id],'onclick'=>"return confirm('Are you sure you want to delete this item?');",'method' => 'DELETE')) !!}
+
+                       <button type="submit" class="btn btn-primary">Delete</button>
+                       {!! Form::close() !!}
+                   </td>
                  </tr>
           @endforeach
                </tbody>

@@ -27,8 +27,16 @@
                     </ul>
                   </div>
                 @endif
-                <form class="" action="{{url('/testimonial')}}" method="post">@csrf
+                <form class="" action="{{url('/testimonial')}}" method="post" enctype="multipart/form-data">@csrf
                   <div class="card-body">
+                      <div class="row">
+                          <div class="col-md-8">
+                              <div class="form-group">
+                                  <label for="normal-input" class="form-control-label">Name</label>
+                                  <input name="name" class="form-control" placeholder="Name">
+                              </div>
+                          </div>
+                      </div>
 
                       <div class="row">
                           <div class="col-md-8">
@@ -41,45 +49,30 @@
 
                       <div class="row">
                           <div class="col-md-8">
-                            <div class="form-group">
-                                <label class="form-control-label">Body :</label>
-                                <input type="text" name="body" class="form-control">
-                            </div>
-
+                              <div class="form-group">
+                                  <label for="normal-input" class="form-control-label">Body</label>
+                                  <input name="body" class="form-control" placeholder="body">
+                              </div>
                           </div>
                       </div>
 
                       <div class="row">
                           <div class="col-md-8">
-                            <div class="form-group">
-                                <label class="form-control-label">Name :</label>
-                                <input type="text" name="name" class="form-control">
-                            </div>
-
+                              <div class="form-group">
+                                  <label for="normal-input" class="form-control-label">Designation</label>
+                                  <input name="designation" class="form-control" placeholder="Designation">
+                              </div>
                           </div>
                       </div>
 
                       <div class="row">
                           <div class="col-md-8">
-                            <div class="form-group">
-                                <label class="form-control-label">Designation :</label>
-                                <input type="text" name="designation" class="form-control">
-                            </div>
-
+                              <div class="form-group">
+                                  <label for="normal-input" class="form-control-label">Active</label>
+                                  <input name="is_active" class="form-control" >
+                              </div>
                           </div>
                       </div>
-
-                      <div class="row">
-                          <div class="col-md-8">
-                            <div class="form-group">
-                                <label class="form-control-label">Is Active? </label>
-                                <input type="radio" name="is_active" value="1">Yes
-                                <input type="radio" name="is_active" value="0">No
-                            </div>
-
-                          </div>
-                      </div>
-
 
                   <button class="btn btn-success" type="submit">Create Post</button>
                   <button class="btn btn-success" type="reset">Reset</button>

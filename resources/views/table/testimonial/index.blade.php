@@ -26,9 +26,9 @@
                          <thead>
                            <tr>
                              <th>No.</th>
+                             <th>Name</th>
                              <th>Image</th>
                              <th>Body</th>
-                             <th>Name</th>
                              <th>Designation</th>
                              <th>Activity</th>
                              <th>Action</th>
@@ -41,12 +41,18 @@
                          <tbody>
                            <tr>
                              <td>{{++$sl}}</td>
+                             <td><a href="{{route('testimonial.show',$testimonial->id)}}">{{$testimonial->name}}</a></td>
                              <td><img src="{{ asset('images/testimonial/'.$testimonial->picture) }}" width="100" height="100"></td>
                              <td>{{$testimonial->body}}</td>
-                             <td>{{$testimonial->name}}</td>
                              <td>{{$testimonial->designation}}</td>
                              <td>Active | Disactive</td>
-                             <th>Edit | Delete</th>
+                             <td></a>
+                                  <a href="{{route('testimonial.edit',$testimonial->id)}}">Edit</a>|
+                                 {!! Form::open(array('url' => ['testimonial',$testimonial->id],'onclick'=>"return confirm('Are you sure you want to delete this item?');",'method' => 'DELETE')) !!}
+
+                                 <button type="submit" class="btn btn-primary">Delete</button>
+                                 {!! Form::close() !!}
+                             </td>
                            </tr>
                     @endforeach
                          </tbody>

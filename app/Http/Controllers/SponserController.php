@@ -57,7 +57,7 @@ class SponserController extends Controller
           else{
               $data['picture'] = null;
           }
-          dd($data);
+          //dd($data);
           Sponser::create($data);
 
           //return redirect()->route('labs.index')->withMessage('Lab is Inserted Successfully.');
@@ -112,7 +112,7 @@ class SponserController extends Controller
       try {
             $sponser = Sponser::findOrFail($id);
             $data = $request->all();
-            $oldpath=public_path('images/sponser/' . $banner->picture);
+            $oldpath=public_path('images/sponser/' . $sponser->picture);
             if($request->hasFile('image')){
                 $image=$request->file('image');
                 $filename=time(). '.' .$image->getClientOriginalExtension();
@@ -125,6 +125,7 @@ class SponserController extends Controller
                 $data['picture']=$sponser->picture;
             }
             $sponser->update($data);
+            //dd($data);
             return redirect('sponser')->with('message','Sponser Updated !');
         }
         catch(QueryException $e){

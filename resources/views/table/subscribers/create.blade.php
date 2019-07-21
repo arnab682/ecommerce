@@ -41,11 +41,10 @@
 
                       <div class="row">
                           <div class="col-md-8">
-                            <div class="form-group">
-                                <label class="form-control-label">Subscribed :</label>
-                                <input type="text" name="is_subscribed" class="form-control">
-                            </div>
-
+                              <div class="form-group">
+                                  <label for="normal-input" class="form-control-label">Subcribed</label>
+                                  <input name="is_subcribed" class="form-control" placeholder="Subcribed">
+                              </div>
                           </div>
                       </div>
 

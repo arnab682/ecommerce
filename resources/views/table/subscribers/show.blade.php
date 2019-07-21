@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-  Label Show
+  Subscriber Show
 @endsection
 
 @section('content')
@@ -15,24 +15,27 @@
 
     <div class="card">
       <div class="card-header bg-light">
-          Label Show :
+          Subscriber Show :
       </div>
       <div class="card-body">
         <dl>
             <dt>ID :</dt>
-            <dd>{{$label->id}}</dd>
+            <dd>{{$subscriber->id}}</dd>
 
-            <dt>Title :</dt>
-            <dd>{{$label->title}}</dd>
+            <dt>Email :</dt>
+            <dd>{{$subscriber->email}}</dd>
 
-            <dt>Picture :</dt>
-            <dd> <img src="{{ asset('images/label/').'/'.$label->picture }}" width="100" height="100"></dd>
+            <dt>Subcribed :</dt>
+            <dd>{{$subscriber->is_subcribed}}</dd>
+
+            <dt>Reason :</dt>
+            <dd>{{$subscriber->reason}}</dd>
 
             <dt>Created At</dt>
-            <dd>{{$label->created_at}}</dd>
+            <dd>{{$subscriber->created_at}}</dd>
 
             <dt>Updated At</dt>
-            <dd>{{$label->updated_at}}</dd>
+            <dd>{{$subscriber->updated_at}}</dd>
         </dl>
 
       </div>

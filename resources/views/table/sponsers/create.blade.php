@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-  Sponser
+  Label
 @endsection
 
 @section('content')
@@ -12,7 +12,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header bg-light">
-                    Sponser Create :
+                    Label Create :
                 </div>
                 @if(Session::has('success'))
                   <div class="alert alert-success">{{Session::get('success')}}</div>
@@ -27,7 +27,7 @@
                     </ul>
                   </div>
                 @endif
-                <form class="" action="{{url('/sponser')}}" method="post">@csrf
+                <form class="" action="{{url('/sponser')}}" method="post" enctype="multipart/form-data">@csrf
                   <div class="card-body">
                       <div class="row">
                           <div class="col-md-8">
@@ -49,40 +49,37 @@
 
                       <div class="row">
                           <div class="col-md-8">
-                            <div class="form-group">
-                                <label class="form-control-label">Link :</label><br>
-                                <input type="link" name="link" class="form-control">
-                            </div>
+                              <div class="form-group">
+                                  <label for="normal-input" class="form-control-label">Link</label>
+                                  <input name="link" class="form-control" placeholder="LINK">
+                              </div>
                           </div>
                       </div>
 
                       <div class="row">
                           <div class="col-md-8">
-                            <div class="form-group">
-                                <label class="form-control-label">Promotional Message :</label>
-                                <input type="text" name="promotional_message" class="form-control">
-                            </div>
-
+                              <div class="form-group">
+                                  <label for="normal-input" class="form-control-label">Promotional Message</label>
+                                  <input name="promotional_message" class="form-control" placeholder="Promotional Message">
+                              </div>
                           </div>
                       </div>
 
                       <div class="row">
                           <div class="col-md-8">
-                            <div class="form-group">
-                                <label class="form-control-label">Html Banner :</label>
-                                <input type="text" name="html_banner" class="form-control">
-                            </div>
-
+                              <div class="form-group">
+                                  <label for="normal-input" class="form-control-label">Hml Bannert</label>
+                                  <input name="html_banner" class="form-control" placeholder="Html Banner">
+                              </div>
                           </div>
                       </div>
 
                       <div class="row">
                           <div class="col-md-8">
-                            <div class="form-group">
-                                <label class="form-control-label">Active :</label>
-                                <input type="text" name="is_active" class="form-control">
-                            </div>
-
+                              <div class="form-group">
+                                  <label for="normal-input" class="form-control-label">Active</label>
+                                  <input name="is_active" class="form-control" >
+                              </div>
                           </div>
                       </div>
 

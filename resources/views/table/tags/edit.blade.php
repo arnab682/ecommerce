@@ -12,7 +12,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header bg-light">
-                    Tag Edit :
+                    Tag Update :
                 </div>
                 @if(Session::has('success'))
                   <div class="alert alert-success">{{Session::get('success')}}</div>
@@ -27,13 +27,14 @@
                     </ul>
                   </div>
                 @endif
-                <form class="" action="{{url('/tag')}}" method="post">@csrf
+                <form class="" action="{{url('/tag/'.$tag->id)}}" method="post">@csrf
+                  {{method_field('put')}}
                   <div class="card-body">
                       <div class="row">
                           <div class="col-md-8">
                               <div class="form-group">
                                   <label for="normal-input" class="form-control-label">Title</label>
-                                  <input name="title" class="form-control" placeholder="title">
+                                  <input value="{{$tag->title}}" name="title" class="form-control">
                               </div>
                           </div>
                       </div>

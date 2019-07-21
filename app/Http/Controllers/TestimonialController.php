@@ -83,7 +83,7 @@ class TestimonialController extends Controller
     {
       $testimonial = Testimonial::findOrfail($id);
       //dd($slider);
-      return view('table.testimonials.show', compact('testimonial'));
+      return view('table.testimonial.show', compact('testimonial'));
     }
 
     /**
@@ -95,7 +95,7 @@ class TestimonialController extends Controller
     public function edit($id)
     {
       $testimonial = Testimonial::findOrfail($id);
-      return view('table.testimonials.edit', compact('testimonial'));
+      return view('table.testimonial.edit', compact('testimonial'));
     }
 
     /**
@@ -110,7 +110,7 @@ class TestimonialController extends Controller
       try {
             $testimonial = Testimonial::findOrFail($id);
             $data = $request->all();
-            $oldpath=public_path('images/testimonial/' . $banner->picture);
+            $oldpath=public_path('images/testimonial/' . $testimonial->picture);
             if($request->hasFile('image')){
                 $image=$request->file('image');
                 $filename=time(). '.' .$image->getClientOriginalExtension();
@@ -144,7 +144,7 @@ class TestimonialController extends Controller
       try{
           $testimonial = Testimonial::findOrFail($id);
           $testimonial->delete();
-          return redirect()->route('testimonials.index')->with('message','Testimonial is Deleted Successfully.');
+          return redirect()->route('testimonial.index')->with('message','Testimonial is Deleted Successfully.');
         }catch(QueryException $e){
           return redirect()
               ->route('testimonial.index')

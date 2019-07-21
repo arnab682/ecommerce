@@ -37,7 +37,7 @@
                        <tbody>
                          <tr>
                            <td>{{++$sl}}</td>
-                           <td>{{$tag->title}}</td>
+                           <td><a href="{{route('tag.show',$tag->id)}}">{{$tag->title}}</a></td>
                            <td>
                                 <a href="{{route('tag.edit',$tag->id)}}">Edit</a>|
                                {!! Form::open(array('url' => ['tag',$tag->id],'onclick'=>"return confirm('Are you sure you want to delete this item?');",'method' => 'DELETE')) !!}

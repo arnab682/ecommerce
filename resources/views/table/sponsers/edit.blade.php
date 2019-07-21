@@ -15,7 +15,7 @@
                     Label Update :
                 </div>
 
-                <form class="" action="{{url('/label/'.$label->id)}}" method="post">@csrf
+                <form class="" action="{{url('/sponser/'.$sponser->id)}}" method="post">@csrf
                   {{ method_field('put') }}
                   <div class="card-body">
                       <div class="row">
@@ -39,40 +39,37 @@
 
                       <div class="row">
                           <div class="col-md-8">
-                            <div class="form-group">
-                                <label class="form-control-label">Link :</label><br>
-                                <input type="link" value="{{$sponser->link}}" name="link" class="form-control">
-                            </div>
+                              <div class="form-group">
+                                  <label for="normal-input" class="form-control-label">Link</label>
+                                  <input name="link" value="{{$sponser->link}}" class="form-control" placeholder="LINK">
+                              </div>
                           </div>
                       </div>
 
                       <div class="row">
                           <div class="col-md-8">
-                            <div class="form-group">
-                                <label class="form-control-label">Promotional Message :</label>
-                                <input type="text" value="{{$sponser->promotional_message}}" name="promotional_message" class="form-control">
-                            </div>
-
+                              <div class="form-group">
+                                  <label for="normal-input" class="form-control-label">Promotional Message</label>
+                                  <input value="{{$sponser->promotional_message}}" name="promotional_message" class="form-control">
+                              </div>
                           </div>
                       </div>
 
                       <div class="row">
                           <div class="col-md-8">
-                            <div class="form-group">
-                                <label class="form-control-label">Html Banner :</label>
-                                <input type="text" value="{{$sponser->html_banner}}" name="html_banner" class="form-control">
-                            </div>
-
+                              <div class="form-group">
+                                  <label for="normal-input" class="form-control-label">Hml Bannert</label>
+                                  <input value="{{$sponser->html_banner}}" name="html_banner" class="form-control">
+                              </div>
                           </div>
                       </div>
 
                       <div class="row">
                           <div class="col-md-8">
-                            <div class="form-group">
-                                <label class="form-control-label">Active :</label>
-                                <input type="text" value="{{$sponser->active}}" name="is_active" class="form-control">
-                            </div>
-
+                              <div class="form-group">
+                                  <label for="normal-input" class="form-control-label">Active</label>
+                                  <input value="{{$sponser->is_active}}" name="is_active" class="form-control" >
+                              </div>
                           </div>
                       </div>
 

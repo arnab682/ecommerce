@@ -113,11 +113,11 @@ class TagController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function destroy(Tag $tag)
+    public function destroy($id)
     {
       try{
-          //$tag = Tag::findOrFail($id);
-          $Tag->delete();
+          $tag = Tag::findOrFail($id);
+          $tag->delete();
           return redirect()->route('tag.index')->with('message','Tag is Deleted Successfully.');
         }catch(QueryException $e){
           return redirect()
