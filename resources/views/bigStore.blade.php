@@ -6,6 +6,7 @@
 
 @section('content')
 <!--video-->
+<!-- <div data-vide-bg="video/video"> -->
 <div data-vide-bg="video/video">
   <div class="container">
   <div class="banner-info">
@@ -21,7 +22,7 @@
   </div>
 </div>
 
-  <script>window.jQuery || document.write('<script src="{{asset('js/vendor/jquery-1.11.1.min.js')}}"><\/script>')</script>
+  <script>window.jQuery || document.write('<script src="{{asset('js/jquery-1.11.1.min.js')}}"><\/script>')</script>
   <script src="{{asset('js/jquery.vide.min.js')}}"></script>
 
 <!--content-->

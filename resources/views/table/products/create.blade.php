@@ -80,30 +80,34 @@
 
                       <div class="row">
                           <div class="col-md-8">
-                              <div class="form-group">
-                                  <label for="normal-input" class="form-control-label">Cost</label>
-                                  <input name="cost" class="form-control" placeholder="Cost">
-                              </div>
+                            <div class="form-group">
+                                <label class="form-control-label">Cost :</label>
+                                <input type="number" name="cost" class="form-control">
+                            </div>
+
                           </div>
                       </div>
 
                       <div class="row">
                           <div class="col-md-8">
-                              <div class="form-group">
-                                  <label for="normal-input" class="form-control-label">MRP</label>
-                                  <input name="mrp" class="form-control" placeholder="MRP">
-                              </div>
+                            <div class="form-group">
+                                <label class="form-control-label">MRP :</label>
+                                <input type="number" name="mrp" class="form-control">
+                            </div>
+
                           </div>
                       </div>
 
                       <div class="row">
                           <div class="col-md-8">
-                              <div class="form-group">
-                                  <label for="normal-input" class="form-control-label">Special Price</label>
-                                  <input name="special_price" class="form-control" placeholder="Special Price">
-                              </div>
+                            <div class="form-group">
+                                <label class="form-control-label">Special Price :</label>
+                                <input type="number" name="special_price" class="form-control">
+                            </div>
+
                           </div>
                       </div>
+
 
                   <button class="btn btn-success" type="submit">Create Post</button>
                   <button class="btn btn-success" type="reset">Reset</button>

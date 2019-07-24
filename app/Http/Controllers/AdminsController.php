@@ -14,19 +14,8 @@ class AdminsController extends Controller
      */
     public function index()
     {
-      {
-        try{
-
             $admins = Admin::all();
             return view('table.admins.index', compact('admins'));
-
-        }catch(QueryException $e){
-
-            return redirect()
-                ->route('404_blade')
-                ->withInput()
-                ->withErrors($e->getMessage());
-        }
     }
 
     /**

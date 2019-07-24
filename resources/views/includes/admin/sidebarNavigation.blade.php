@@ -18,7 +18,7 @@
                     <ul class="nav-dropdown-items">
 
                         <li class="nav-item">
-                            <a href="layouts-normal.html" class="nav-link">
+                            <a href="{{url('/admin')}}" class="nav-link">
                                 <i class="icon icon-user"></i> Admin
                             </a>
                         </li>
