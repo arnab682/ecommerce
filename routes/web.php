@@ -118,7 +118,7 @@ Route::get('/hole', function () {
 
 });
 
-Route::get('/about', function () {
+Route::get('/abouts', function () {
     return view('theme.about');
 
 });

@@ -77,8 +77,10 @@
                       <div class="row">
                           <div class="col-md-8">
                             <div class="form-group">
-                                <label class="form-control-label">Active :</label><br>
-                                <input type="text" name="is_active" class="form-control">
+
+                                <label class="form-control-label">Is Active? </label>
+                                  <input type="radio" name="is_active" value="1">Yes
+                                  <input type="radio" name="is_active" value="0">No
                             </div>
                           </div>
                       </div>
@@ -86,8 +88,10 @@
                       <div class="row">
                           <div class="col-md-8">
                             <div class="form-group">
-                                <label class="form-control-label">Draft :</label>
-                                <input type="text" name="is_draft" class="form-control">
+
+                                <label class="form-control-label">Save as Draft : </label>
+                                  <input type="radio" name="is_draft" value="1">Yes
+                                  <input type="radio" name="is_draft" value="0">No
                             </div>
 
                           </div>

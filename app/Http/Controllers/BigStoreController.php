@@ -21,7 +21,7 @@ class BigStoreController extends Controller
         $sliders = Slider::where('is_active',1)->take(3)->get(); //->orderBy('name', 'desc')
         $banner = Banner::all();
         $category = Category::all();
-        $products = Product::all();
+        $products = Product::orderBy('id', 'asc')->take(4)->get();
 
         //dd($sliders);
 
@@ -32,7 +32,7 @@ class BigStoreController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
+     *asc
      * @return \Illuminate\Http\Response
      */
     public function create()
