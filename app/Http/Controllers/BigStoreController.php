@@ -18,10 +18,10 @@ class BigStoreController extends Controller
     public function index()
     {
 
-        $sliders = Slider::where('is_active',1)->take(3)->get(); //->orderBy('name', 'desc')
+        $sliders = Slider::where('is_active',1)->take(3)->get(); //->orderBy('name', 'desc') asc
         $banner = Banner::all();
         $category = Category::all();
-        $products = Product::orderBy('id', 'asc')->take(4)->get();
+        $products = Product::where('is_new', '1')->take(4)->get(); //orderBy('id', 'desc')->take(4)->get();
 
         //dd($sliders);
 
@@ -94,5 +94,12 @@ class BigStoreController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function singlePostShow($id){
+      //dd($id);
+       $product = Product::findOrFail($id);
+       return view('theme.single', compact('product'));
+      //return "hi";
     }
 }

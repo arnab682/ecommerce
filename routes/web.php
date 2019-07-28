@@ -80,6 +80,11 @@ Route::resource('slider', 'SliderController');
 //........................................................
 
 
+//Single Post
+Route::get('/single/{id}', 'BigStoreController@singlePostShow')->name('singleShow');
+
+
+
 Route::get('/wishlist', function () {
     return view('theme.wishlist');
 
@@ -129,11 +134,6 @@ Route::get('/contact', function () {
 
 Route::get('/codes', function () {
     return view('theme.codes');
-
-});
-
-Route::get('/single', function () {
-    return view('theme.single');
 
 });
 

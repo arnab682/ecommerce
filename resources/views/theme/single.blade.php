@@ -11,7 +11,7 @@
 <div class="banner-top">
  <div class="container">
    <h3 >Lorem</h3>
-   <h4><a href="index.html">Home</a><label>/</label>Lorem</h4>
+   <h4><a href="{{url('/')}}">Home</a><label>/</label>Lorem</h4>
    <div class="clearfix"> </div>
  </div>
 </div>
@@ -22,7 +22,7 @@
        <div class="single-w3agile">
 
 <div id="picture-frame">
-     <img src="images/si.jpg" data-src="images/si-1.jpg" alt="" class="img-responsive"/>
+     <img src="{{ asset('images/product/'.$product->picture) }}" data-src="images/si-1.jpg" alt="" class="img-responsive"/>
    </div>
                    <script src="js/jquery.zoomtoo.js"></script>
                <script>
@@ -39,11 +39,11 @@
      </div>
      <div class="col-md-7 single-top-left ">
                <div class="single-right">
-       <h3>Wheat</h3>
+       <h3>{{$product->title}}</h3>
 
 
         <div class="pr-single">
-         <p class="reduced "><del>$10.00</del>$5.00</p>
+         <p class="reduced "><del>${{$product->cost}}.00</del>${{$product->special_price}}.00</p>
        </div>
        <div class="block block-w3">
          <div class="starbox small ghosting"> </div>
@@ -57,8 +57,9 @@
          <li><a href="#" class="icon dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i><span></span></a></li>
        </ul>
          <div class="add add-3">
-                      <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="Wheat" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="images/si.jpg">Add to Cart</button>
-                   </div>
+
+            <a href="#" class="btn btn-danger my-cart-b">Add to Cart</a>
+         </div>
 
 
 
@@ -90,7 +91,7 @@
              <div class="col-md-3 pro-1">
                <div class="col-m">
                  <a href="#" data-toggle="modal" data-target="#myModal5" class="offer-img">
-                   <img src="images/of4.png" class="img-responsive" alt="">
+                   <img src="{{ asset('images/product/'.$product->picture) }}" class="img-responsive" alt="">
                    <div class="offer"><p><span>Offer</span></p></div>
                  </a>
                  <div class="mid-1">
@@ -105,7 +106,7 @@
                      <div class="clearfix"></div>
                    </div>
                      <div class="add">
-                      <button class="btn btn-danger my-cart-btn my-cart-b" data-id="5" data-name="Lays" data-summary="summary 5" data-price="0.70" data-quantity="1" data-image="images/of4.png">Add to Cart</button>
+                      <a href="#">Add to Cart</a>
                    </div>
                  </div>
                </div>
