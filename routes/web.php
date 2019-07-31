@@ -20,6 +20,7 @@
 // });
 
 Route::get('/', 'BigStoreController@index');
+Route::get('/cartshop/{id}', 'BigStoreController@display');
 
 
 

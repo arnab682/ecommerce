@@ -172,15 +172,20 @@
           </li>
 
           <li><a href="{{url('/codes')}}" class="hyper"> <span>Codes</span></a></li>
-          <li><a href="{{url('/about')}}" class="hyper"> <span>About</span></a></li>
+          <li><a href="{{url('/abouts')}}" class="hyper"> <span>About</span></a></li>
           <li><a href="{{url('/contact')}}" class="hyper"><span>Contact Us</span></a></li>
         </ul>
       </div>
       </nav>
+
        <div class="cart" >
 
-        <span class="fa fa-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></span>
+        <a href="{{url('/cartshop')}}">
+          <span class="fa fa-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></span>
+        </a>
+
       </div>
+
       <div class="clearfix"></div>
     </div>
 

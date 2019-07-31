@@ -59,7 +59,7 @@
                 </a>
                 <div class="mid-1">
                   <div class="women">
-                    <h6><a href="">{{$product->title}}</a>(1 kg)</h6>
+                    <h6><a href="{{url('/single', $product->id)}}"> {{$product->title}}</a>(1 kg)</h6>
                   </div>
                   <div class="mid-2">
                     <p ><label>${{$product->cost}}.00</label><em class="item_price">${{$product->special_price}}.00</em></p>
@@ -69,7 +69,9 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="add">
+                     <a href="{{url('/cartshop', $product->id)}}">
                      <button class="btn btn-danger  my-cart-b " data-id="1" data-name="Moong" data-summary="summary 1" data-price="1.50" data-quantity="1" data-image="images/of.png">Add to Cart</button>
+                    </a>
                   </div>
 
                 </div>
@@ -506,7 +508,7 @@
                     </div>
                     <div class="clearfix"></div>
                   </div>
-                     <a href="" class="btn btn-danger my-cart-b" >Add to Cart</a>
+                     <a href="{{url('/cartshop')}}" class="btn btn-danger my-cart-b" >Add to Cart</a>
                   </div>
                 </div>
               </div>

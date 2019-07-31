@@ -102,4 +102,13 @@ class BigStoreController extends Controller
        return view('theme.single', compact('product'));
       //return "hi";
     }
+
+
+    public function display($id){
+      $product = Product::findOrFail($id);
+      //dd($product);
+      return view('table.carts.cart', compact('product'));
+    }
+
+
 }
