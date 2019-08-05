@@ -180,9 +180,8 @@
 
        <div class="cart" >
 
-        <a href="{{url('/cartshop')}}">
+      
           <span class="fa fa-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></span>
-        </a>
 
       </div>
 

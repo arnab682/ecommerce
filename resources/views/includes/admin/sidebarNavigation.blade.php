@@ -5,106 +5,231 @@
                 <li class="nav-title">Navigation</li>
 
                 <li class="nav-item">
-                    <a href="index.html" class="nav-link active">
+                    <a href="{{url('/dashboard')}}" class="nav-link active">
                         <i class="icon icon-speedometer"></i> Dashboard
                     </a>
                 </li>
 
+                <li class="nav-title">Database Table</li>
+
                 <li class="nav-item nav-dropdown">
                     <a href="#" class="nav-link nav-dropdown-toggle">
-                        <i class="icon icon-target"></i> Database Table <i class="fa fa-caret-left"></i>
+                        <i class="icon icon-target"></i> Admin <i class="fa fa-caret-left"></i>
                     </a>
 
                     <ul class="nav-dropdown-items">
 
                         <li class="nav-item">
                             <a href="{{url('/admin')}}" class="nav-link">
-                                <i class="icon icon-user"></i> Admin
+                                <i class="icon icon-user"></i> Admin Index
                             </a>
                         </li>
-
-                        <li class="nav-item">
-                            <a href="{{url('/banner')}}" class="nav-link">
-                                <i class="icon icon-"></i> Banner
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{url('/brand')}}" class="nav-link">
-                                <i class="icon icon-"></i> Brand
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{url('/cart')}}" class="nav-link">
-                                <i class="icon icon-"></i> Cart
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{url('/category')}}" class="nav-link">
-                                <i class="icon icon-"></i> Category
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{url('/contact')}}" class="nav-link">
-                                <i class="icon icon-"></i> Contact
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{url('/label')}}" class="nav-link">
-                                <i class="icon icon-"></i> Label
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{url('/order')}}" class="nav-link">
-                                <i class="icon icon-"></i> Order
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{url('/page')}}" class="nav-link">
-                                <i class="icon icon-"></i> Page
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{url('/product')}}" class="nav-link">
-                                <i class="icon icon-"></i> Product
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{url('/sponser')}}" class="nav-link">
-                                <i class="icon icon-"></i> Sponser
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{url('/subscriber')}}" class="nav-link">
-                                <i class="icon icon-"></i> Subscriber
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{url('/tag')}}" class="nav-link">
-                                <i class="icon icon-"></i> Tag
-                            </a>
-                        </li>
-
-                        <li class="nav-item">
-                            <a href="{{url('/testimonial')}}" class="nav-link">
-                                <i class="icon icon-"></i> Testimonial
-                            </a>
-                        </li>
-
                     </ul>
                 </li>
 
                 <li class="nav-item nav-dropdown">
+                    <a href="#" class="nav-link nav-dropdown-toggle">
+                        <i class="icon icon-target"></i> Banner <i class="fa fa-caret-left"></i>
+                    </a>
+
+                    <ul class="nav-dropdown-items">
+
+                        <li class="nav-item">
+                            <a href="{{url('/banner')}}" class="nav-link">
+                                <i class="icon icon-user"></i> Banner Index
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item nav-dropdown">
+                    <a href="#" class="nav-link nav-dropdown-toggle">
+                        <i class="icon icon-target"></i> Brand <i class="fa fa-caret-left"></i>
+                    </a>
+
+                    <ul class="nav-dropdown-items">
+
+                        <li class="nav-item">
+                            <a href="{{url('/brand')}}" class="nav-link">
+                                <i class="icon icon-user"></i> Brand Index
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item nav-dropdown">
+                    <a href="#" class="nav-link nav-dropdown-toggle">
+                        <i class="icon icon-target"></i> Cart <i class="fa fa-caret-left"></i>
+                    </a>
+
+                    <ul class="nav-dropdown-items">
+
+                        <li class="nav-item">
+                            <a href="{{url('/cart')}}" class="nav-link">
+                                <i class="icon icon-user"></i> Cart Index
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item nav-dropdown">
+                    <a href="#" class="nav-link nav-dropdown-toggle">
+                        <i class="icon icon-target"></i> Category <i class="fa fa-caret-left"></i>
+                    </a>
+
+                    <ul class="nav-dropdown-items">
+
+                        <li class="nav-item">
+                            <a href="{{url('/category')}}" class="nav-link">
+                                <i class="icon icon-user"></i> Category Index
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item nav-dropdown">
+                    <a href="#" class="nav-link nav-dropdown-toggle">
+                        <i class="icon icon-target"></i> Contact <i class="fa fa-caret-left"></i>
+                    </a>
+
+                    <ul class="nav-dropdown-items">
+
+                        <li class="nav-item">
+                            <a href="{{url('/contact')}}" class="nav-link">
+                                <i class="icon icon-user"></i> Contact Index
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item nav-dropdown">
+                    <a href="#" class="nav-link nav-dropdown-toggle">
+                        <i class="icon icon-target"></i> Label <i class="fa fa-caret-left"></i>
+                    </a>
+
+                    <ul class="nav-dropdown-items">
+
+                        <li class="nav-item">
+                            <a href="{{url('/label')}}" class="nav-link">
+                                <i class="icon icon-user"></i> Label Index
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item nav-dropdown">
+                    <a href="#" class="nav-link nav-dropdown-toggle">
+                        <i class="icon icon-target"></i> Order <i class="fa fa-caret-left"></i>
+                    </a>
+
+                    <ul class="nav-dropdown-items">
+
+                        <li class="nav-item">
+                            <a href="{{url('/order')}}" class="nav-link">
+                                <i class="icon icon-user"></i> Order Index
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item nav-dropdown">
+                    <a href="#" class="nav-link nav-dropdown-toggle">
+                        <i class="icon icon-target"></i> Page <i class="fa fa-caret-left"></i>
+                    </a>
+
+                    <ul class="nav-dropdown-items">
+
+                        <li class="nav-item">
+                            <a href="{{url('/page')}}" class="nav-link">
+                                <i class="icon icon-user"></i> Page Index
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item nav-dropdown">
+                    <a href="#" class="nav-link nav-dropdown-toggle">
+                        <i class="icon icon-target"></i> Product <i class="fa fa-caret-left"></i>
+                    </a>
+
+                    <ul class="nav-dropdown-items">
+
+                        <li class="nav-item">
+                            <a href="{{url('/product')}}" class="nav-link">
+                                <i class="icon icon-user"></i> Product Index
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item nav-dropdown">
+                    <a href="#" class="nav-link nav-dropdown-toggle">
+                        <i class="icon icon-target"></i> Sponser <i class="fa fa-caret-left"></i>
+                    </a>
+
+                    <ul class="nav-dropdown-items">
+
+                        <li class="nav-item">
+                            <a href="{{url('/sponser')}}" class="nav-link">
+                                <i class="icon icon-user"></i> Sponser Index
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item nav-dropdown">
+                    <a href="#" class="nav-link nav-dropdown-toggle">
+                        <i class="icon icon-target"></i> Subscriber <i class="fa fa-caret-left"></i>
+                    </a>
+
+                    <ul class="nav-dropdown-items">
+
+                        <li class="nav-item">
+                            <a href="{{url('/subscriber')}}" class="nav-link">
+                                <i class="icon icon-user"></i> Subscriber Index
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item nav-dropdown">
+                    <a href="#" class="nav-link nav-dropdown-toggle">
+                        <i class="icon icon-target"></i> Tag <i class="fa fa-caret-left"></i>
+                    </a>
+
+                    <ul class="nav-dropdown-items">
+
+                        <li class="nav-item">
+                            <a href="{{url('/tag')}}" class="nav-link">
+                                <i class="icon icon-user"></i> Tag Index
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item nav-dropdown">
+                    <a href="#" class="nav-link nav-dropdown-toggle">
+                        <i class="icon icon-target"></i> Testimonial <i class="fa fa-caret-left"></i>
+                    </a>
+
+                    <ul class="nav-dropdown-items">
+
+                        <li class="nav-item">
+                            <a href="{{url('/testimonial')}}" class="nav-link">
+                                <i class="icon icon-user"></i> Testimonial Index
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li></li>
+                <li></li>
+                <li></li>
+                <li>more</li>
+
+
+
+                <!-- <li class="nav-item nav-dropdown">
                     <a href="#" class="nav-link nav-dropdown-toggle">
                         <i class="icon icon-target"></i> Layouts <i class="fa fa-caret-left"></i>
                     </a>
@@ -262,7 +387,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
             </ul>
         </nav>
     </div>

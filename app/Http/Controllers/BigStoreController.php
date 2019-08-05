@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Model\Cart;
 use App\Model\Slider;
 use App\Model\Banner;
 use App\Model\Category;
@@ -109,6 +110,13 @@ class BigStoreController extends Controller
       //dd($product);
       return view('table.carts.cart', compact('product'));
     }
+
+   public function cartStore(Request $request){
+
+      dd($request);
+
+
+   }
 
 
 }

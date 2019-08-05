@@ -69,9 +69,9 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="add">
-                     <a href="{{url('/cartshop', $product->id)}}">
-                     <button class="btn btn-danger  my-cart-b " data-id="1" data-name="Moong" data-summary="summary 1" data-price="1.50" data-quantity="1" data-image="images/of.png">Add to Cart</button>
-                    </a>
+
+                        <button class="btn btn-danger my-cart-btn  my-cart-b " data-id="{{$product->id}}" data-name="{{$product->title}}" data-summary="summary 1" data-price="{{$product->special_price}}" data-quantity="1" data-image="{{ asset('images/product/'.$product->picture) }}">Add to Cart</button>
+
                   </div>
 
                 </div>
@@ -508,12 +508,13 @@
                     </div>
                     <div class="clearfix"></div>
                   </div>
-                     <a href="{{url('/cartshop')}}" class="btn btn-danger my-cart-b" >Add to Cart</a>
+
+                     <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="{{$product->id}}" data-name="{{$product->title}}" data-summary="summary 24" data-price="{{$product->special_price}}" data-quantity="1" data-image="{{ asset('images/product/'.$product->picture) }}">Add to Cart</button>
                   </div>
                 </div>
               </div>
             </div>
-              @endforeach
+    @endforeach
             <div class="clearfix"></div>
 
       </div>

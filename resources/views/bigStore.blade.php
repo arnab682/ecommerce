@@ -1479,7 +1479,10 @@
               <h4 class="quick">Quick Overview:</h4>
               <p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
                <div class="add-to">
-                   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="24" data-name="Gel" data-summary="summary 24" data-price="0.80" data-quantity="1" data-image="images/of23.png">Add to Cart</button>
+                 <form class="" action="{{url('/')}}" method="post">
+                     <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="24" data-name="Gel" data-summary="summary 24" data-price="0.80" data-quantity="1" data-image="images/of23.png">Add to Cart</button>
+                 </form>
+
                 </div>
             </div>
             <div class="clearfix"> </div>

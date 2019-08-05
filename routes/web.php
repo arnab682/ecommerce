@@ -19,10 +19,8 @@
 //
 // });
 
-Route::get('/', 'BigStoreController@index');
-Route::get('/cartshop/{id}', 'BigStoreController@display');
 
-
+//Admin Panel
 
 Route::resource('/admin', 'AdminController');
 
@@ -81,8 +79,18 @@ Route::resource('slider', 'SliderController');
 //........................................................
 
 
+//BigStore Theme
+
+//Home
+Route::get('/', 'BigStoreController@index');
+
 //Single Post
 Route::get('/single/{id}', 'BigStoreController@singlePostShow')->name('singleShow');
+
+//Cart Shop for Order
+Route::get('/cartshop/{id}', 'BigStoreController@display');
+Route::post('/cartshop', 'BigStoreController@cartStore');
+
 
 
 
