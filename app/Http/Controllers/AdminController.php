@@ -11,14 +11,11 @@ class AdminController extends Controller
     // public function __construct(){
     // 	$this->middleware('CheckRole:admin');
     // }
-
-    public function dashboard(){
-    	echo "string";
+    public function dashboard()
+    {
+          return view('dashboard');
     }
 
-    public function index(){
-      // $admins = Admin::all();
-      // return view('table.admins.index', compact('admins'));
-      return "Hi";
-    }
+
+
 }

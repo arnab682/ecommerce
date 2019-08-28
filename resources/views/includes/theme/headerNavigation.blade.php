@@ -7,8 +7,24 @@
   <div class="head-t">
     <ul class="card">
       <li><a href="{{url('/wishlist')}}" ><i class="fa fa-heart" aria-hidden="true"></i>Wishlist</a></li>
-      <li><a href="{{url('/siteLogin')}}" ><i class="fa fa-user" aria-hidden="true"></i>Login</a></li>
-      <li><a href="{{url('/registation')}}" ><i class="fa fa-arrow-right" aria-hidden="true"></i>Register</a></li>
+
+      @if(Auth::check())
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('dashboard') }}">
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>Dashboard</a>
+        </li>
+
+        <li class="nav-item">
+          <form method="POST" id="logout-form" action="{{route('logout')}}">@csrf</form>
+          <a class="nav-link" href="#" onclick="document.getElementById('logout-form').submit();" >
+            <i class="fa fa-user" aria-hidden="true"></i>Logout</a>
+        </li>
+
+      @else
+        <li><a href="{{url('/siteLogin')}}" ><i class="fa fa-user" aria-hidden="true"></i>Login</a></li>
+        <li><a href="{{url('/registation')}}" ><i class="fa fa-arrow-right" aria-hidden="true"></i>Register</a></li>
+      @endif
+
       <li><a href="{{url('/about')}}" ><i class="fa fa-file-text-o" aria-hidden="true"></i>Order History</a></li>
       <li><a href="{{url('/shipping')}}" ><i class="fa fa-ship" aria-hidden="true"></i>Shipping</a></li>
     </ul>
@@ -180,7 +196,7 @@
 
        <div class="cart" >
 
-      
+
           <span class="fa fa-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></span>
 
       </div>

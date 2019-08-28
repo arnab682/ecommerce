@@ -14,14 +14,14 @@
 
                 <li class="nav-item nav-dropdown">
                     <a href="#" class="nav-link nav-dropdown-toggle">
-                        <i class="icon icon-target"></i> Admin <i class="fa fa-caret-left"></i>
+                        <i class="icon icon-target"></i> All User <i class="fa fa-caret-left"></i>
                     </a>
 
                     <ul class="nav-dropdown-items">
 
                         <li class="nav-item">
-                            <a href="{{url('/admin')}}" class="nav-link">
-                                <i class="icon icon-user"></i> Admin Index
+                            <a href="{{route('user.index')}}" class="nav-link">
+                                <i class=""></i> User Index
                             </a>
                         </li>
                     </ul>
@@ -35,7 +35,7 @@
                     <ul class="nav-dropdown-items">
 
                         <li class="nav-item">
-                            <a href="{{url('/banner')}}" class="nav-link">
+                            <a href="{{route('banner.index')}}" class="nav-link">
                                 <i class="icon icon-user"></i> Banner Index
                             </a>
                         </li>
@@ -50,7 +50,7 @@
                     <ul class="nav-dropdown-items">
 
                         <li class="nav-item">
-                            <a href="{{url('/brand')}}" class="nav-link">
+                            <a href="{{route('brand.index')}}" class="nav-link">
                                 <i class="icon icon-user"></i> Brand Index
                             </a>
                         </li>
@@ -65,7 +65,7 @@
                     <ul class="nav-dropdown-items">
 
                         <li class="nav-item">
-                            <a href="{{url('/cart')}}" class="nav-link">
+                            <a href="{{route('cart.index')}}" class="nav-link">
                                 <i class="icon icon-user"></i> Cart Index
                             </a>
                         </li>
@@ -80,7 +80,7 @@
                     <ul class="nav-dropdown-items">
 
                         <li class="nav-item">
-                            <a href="{{url('/category')}}" class="nav-link">
+                            <a href="{{route('category.index')}}" class="nav-link">
                                 <i class="icon icon-user"></i> Category Index
                             </a>
                         </li>
@@ -95,7 +95,7 @@
                     <ul class="nav-dropdown-items">
 
                         <li class="nav-item">
-                            <a href="{{url('/contact')}}" class="nav-link">
+                            <a href="{{route('contact.index')}}" class="nav-link">
                                 <i class="icon icon-user"></i> Contact Index
                             </a>
                         </li>
@@ -110,7 +110,7 @@
                     <ul class="nav-dropdown-items">
 
                         <li class="nav-item">
-                            <a href="{{url('/label')}}" class="nav-link">
+                            <a href="{{route('label.index')}}" class="nav-link">
                                 <i class="icon icon-user"></i> Label Index
                             </a>
                         </li>
@@ -125,7 +125,7 @@
                     <ul class="nav-dropdown-items">
 
                         <li class="nav-item">
-                            <a href="{{url('/order')}}" class="nav-link">
+                            <a href="{{route('order.index')}}" class="nav-link">
                                 <i class="icon icon-user"></i> Order Index
                             </a>
                         </li>
@@ -140,7 +140,7 @@
                     <ul class="nav-dropdown-items">
 
                         <li class="nav-item">
-                            <a href="{{url('/page')}}" class="nav-link">
+                            <a href="{{route('page.index')}}" class="nav-link">
                                 <i class="icon icon-user"></i> Page Index
                             </a>
                         </li>
@@ -155,7 +155,7 @@
                     <ul class="nav-dropdown-items">
 
                         <li class="nav-item">
-                            <a href="{{url('/product')}}" class="nav-link">
+                            <a href="{{route('product.index')}}" class="nav-link">
                                 <i class="icon icon-user"></i> Product Index
                             </a>
                         </li>
@@ -170,7 +170,7 @@
                     <ul class="nav-dropdown-items">
 
                         <li class="nav-item">
-                            <a href="{{url('/sponser')}}" class="nav-link">
+                            <a href="{{route('sponser.index')}}" class="nav-link">
                                 <i class="icon icon-user"></i> Sponser Index
                             </a>
                         </li>
@@ -185,7 +185,7 @@
                     <ul class="nav-dropdown-items">
 
                         <li class="nav-item">
-                            <a href="{{url('/subscriber')}}" class="nav-link">
+                            <a href="{{route('subscriber.index')}}" class="nav-link">
                                 <i class="icon icon-user"></i> Subscriber Index
                             </a>
                         </li>
@@ -200,7 +200,7 @@
                     <ul class="nav-dropdown-items">
 
                         <li class="nav-item">
-                            <a href="{{url('/tag')}}" class="nav-link">
+                            <a href="{{route('tag.index')}}" class="nav-link">
                                 <i class="icon icon-user"></i> Tag Index
                             </a>
                         </li>
@@ -215,7 +215,7 @@
                     <ul class="nav-dropdown-items">
 
                         <li class="nav-item">
-                            <a href="{{url('/testimonial')}}" class="nav-link">
+                            <a href="{{route('testimonial.index')}}" class="nav-link">
                                 <i class="icon icon-user"></i> Testimonial Index
                             </a>
                         </li>

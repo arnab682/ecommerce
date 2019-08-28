@@ -20,59 +20,11 @@
 // });
 
 
-//Admin Panel
 
-Route::resource('/admin', 'AdminController');
 
 
 //..............................................................
 
-
-//label
-Route::resource('/label', 'LabelController');
-
-//Order
-Route::resource('/order', 'OrderController');
-
-//Page
-Route::resource('/page', 'PageController');
-
-//Subscriber
-Route::resource('/subscriber', 'SubscriberController');
-
-//Tag
-Route::resource('/tag', 'TagController');
-
-//Testimonial
-Route::resource('/testimonial', 'TestimonialController');
-
-//Contact
-Route::resource('/contact', 'ContactController');
-
-//Categories
-Route::resource('/category', 'CategoryController');
-
-//cart
-Route::resource('/cart', 'CartController');
-
-//Brand
-Route::resource('/brand', 'BrandController');
-
-//Banner
-Route::resource('/banner', 'BannerController');
-
-//Admin
-Route::resource('/admins', 'AdminsController');
-
-//Sponser
-Route::resource('/sponser', 'SponserController');
-
-//Product
-Route::resource('/product', 'ProductController');
-
-//SliderShow
-Route::get('/sliderShow', 'SliderController@display');
-Route::resource('slider', 'SliderController');
 
 
 
@@ -85,12 +37,18 @@ Route::resource('slider', 'SliderController');
 Route::get('/', 'BigStoreController@index');
 
 //Single Post
-Route::get('/single/{id}', 'BigStoreController@singlePostShow')->name('singleShow');
+Route::get('/single/{id}', 'ProductController@singlePostShow')->name('singleShow');
 
 //Cart Shop for Order
-Route::get('/cartshop/{id}', 'BigStoreController@display');
-Route::post('/cartshop', 'BigStoreController@cartStore');
+//Route::get('/cartshop/{id}', 'BigStoreController@display');
+Route::post('/cartshop', 'CartController@cartStore');
 
+
+//order test
+Route::get('/order', function () {
+    return view('table.carts.cart');
+
+});
 
 
 
@@ -163,5 +121,52 @@ Auth::routes();
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
 Route::prefix('admin')->group(function(){
-	Route::get('/dashboard', 'AdminController@dashboard')->name('adminDashboard');
+	Route::get('dashboard', 'AdminController@dashboard')->name('adminDashboard');
+  //Admin
+  Route::resource('user', 'UserController');
+
+  //label
+  Route::resource('label', 'LabelController');
+
+  //Order
+  Route::resource('order', 'OrderController');
+
+  //Page
+  Route::resource('page', 'PageController');
+
+  //Subscriber
+  Route::resource('subscriber', 'SubscriberController');
+
+  //Tag
+  Route::resource('tag', 'TagController');
+
+  //Testimonial
+  Route::resource('testimonial', 'TestimonialController');
+
+  //Contact
+  Route::resource('contact', 'ContactController');
+
+  //Categories
+  Route::resource('category', 'CategoryController');
+
+  //cart
+  Route::resource('cart', 'CartController');
+
+  //Brand
+  Route::resource('brand', 'BrandController');
+
+  //Banner
+  Route::resource('banner', 'BannerController');
+
+
+  //Sponser
+  Route::resource('sponser', 'SponserController');
+
+  //Product
+  Route::resource('product', 'ProductController');
+
+  //SliderShow
+  Route::get('sliderShow', 'SliderController@display');
+  Route::resource('slider', 'SliderController');
+
 });

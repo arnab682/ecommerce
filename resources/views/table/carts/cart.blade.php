@@ -38,14 +38,7 @@
                          </thead>
 
 
-             @php
-                 $n = 0;
-                 $pro[] = $product;
-             @endphp
 
-             @if(count($pro)==0)
-              lol
-            @else
 
                          <tbody>
                            <tr>
@@ -77,7 +70,7 @@
                                 </td>
                             </tr>
                         </tfoot>
-                @endif
+                
                      </table>
 
                    </div>

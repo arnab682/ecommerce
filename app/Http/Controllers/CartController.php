@@ -156,4 +156,22 @@ class CartController extends Controller
               ->withErrors($e->getMessage());
         }
     }
+
+    public function display($id){
+      $product = Product::findOrFail($id);
+      //dd($product);
+      return view('table.carts.cart', compact('product'));
+    }
+
+    public function cartStore(Request $request){
+
+       //dd($request);
+       $data = $request->all();
+       Cart::create($data);
+
+       //return redirect()->route('labs.index')->withMessage('Lab is Inserted Successfully.');
+       //return redirect()->route('slider.index')->with('message','Slider is Inserted Successfully.');
+       return back();
+
+    }
 }

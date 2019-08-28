@@ -27,6 +27,7 @@
                            <tr>
                              <th>No.</th>
                              <th>Name</th>
+                             <th>Image</th>
                              <th>Link</th>
                              <th>Action</th>
                            </tr>
@@ -39,6 +40,7 @@
                      <tr>
                        <td>{{++$sl}}</td>
                        <td><a href="{{route('category.show',$category->id)}}">{{$category->name}}</a></td>
+                       <td><img src="{{ asset('images/category/'.$category->picture) }}" width="100" height="100"></td>
                        <td>{{$category->link}}</td>
                        <td></a>
                             <a href="{{route('category.edit',$category->id)}}">Edit</a>|

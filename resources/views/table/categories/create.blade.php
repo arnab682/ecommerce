@@ -42,6 +42,15 @@
                       <div class="row">
                           <div class="col-md-8">
                             <div class="form-group">
+                                <label for="exampleInputFile" class="form-control-label">File input :</label><br>
+                                <input type="file" name="image" id="exampleInputFile" class="form-control">
+                            </div>
+                          </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="col-md-8">
+                            <div class="form-group">
                                 <label class="form-control-label">Link :</label><br>
                                 <input type="link" name="link" class="form-control">
                             </div>

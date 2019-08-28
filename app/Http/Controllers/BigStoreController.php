@@ -18,105 +18,30 @@ class BigStoreController extends Controller
      */
     public function index()
     {
+        // $number = mt_rand(1000000000, 9999999999);
+        // $value = $request->session($number);
+        // dd($value);
+        //$lol = Session::get('id');
+        //dd($lol);
 
         $sliders = Slider::where('is_active',1)->take(3)->get(); //->orderBy('name', 'desc') asc
         $banner = Banner::all();
         $category = Category::all();
-        $products = Product::where('is_new', '1')->take(4)->get(); //orderBy('id', 'desc')->take(4)->get();
+        //$products = Product::where('is_new', '1')->take(4)->get(); //orderBy('id', 'desc')->take(4)->get();
+        $products = Product::all();
+        //$offerProducts = Product::where('is_new'===1 && 'product_type' === 'Staples')->take(4)->get();
+        $offerStaples = Product::where('is_new','=',1)->where('product_type','=', 'Staples')->take(4)->get();
+        $offerSnacks = Product::where('is_new','=',1)->where('product_type','=', 'Snacks')->take(4)->get();
+        $offerFruits = Product::where('is_new','=',1)->where('product_type','=', 'Fruits & Vegetables')->take(4)->get();
+        $offerBreakfast = Product::where('is_new','=',1)->where('product_type','=', 'Breakfast & Cereal')->take(4)->get();
+        //dd($offerProducts);
 
-        //dd($sliders);
 
-
-        return view('big', compact('sliders', 'products'));
+        return view('big', compact('sliders', 'products', 'offerStaples', 'offerSnacks', 'offerFruits', 'offerBreakfast'));
         //return view('bigStore', compact('sliders'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *asc
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
-
-    public function singlePostShow($id){
-      //dd($id);
-       $product = Product::findOrFail($id);
-       return view('theme.single', compact('product'));
-      //return "hi";
-    }
-
-
-    public function display($id){
-      $product = Product::findOrFail($id);
-      //dd($product);
-      return view('table.carts.cart', compact('product'));
-    }
-
-   public function cartStore(Request $request){
-
-      dd($request);
-
-
-   }
 
 
 }

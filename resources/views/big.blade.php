@@ -49,12 +49,12 @@
         <div class="tab-pane active text-style" id="tab1">
           <div class=" con-w3l">
 
+        @foreach($offerStaples as $product)
 
-        @foreach($products as $product)
             <div class="col-md-3 m-wthree">
               <div class="col-m">
                 <a href="#" data-toggle="modal" data-target="#myModal{{$m=1}}" class="offer-img">
-                  <img src="{{ asset('images/product/'.$product->picture) }}" class="img-responsive" alt="">
+                  <img src="{{ asset('images/product/'.$product->picture) }}" class="img-responsive" alt="" height="300px" width="300px">
                   <div class="offer"><p><span>Offer</span></p></div>
                 </a>
                 <div class="mid-1">
@@ -70,7 +70,7 @@
                   </div>
                   <div class="add">
 
-                        <button class="btn btn-danger my-cart-btn  my-cart-b " data-id="{{$product->id}}" data-name="{{$product->title}}" data-summary="summary 1" data-price="{{$product->special_price}}" data-quantity="1" data-image="{{ asset('images/product/'.$product->picture) }}">Add to Cart</button>
+                        <button class="btn btn-danger my-cart-b " data-id="{{$product->id}}" data-name="{{$product->title}}" data-summary="summary 1" data-price="{{$product->special_price}}" data-quantity="1" data-image="{{ asset('images/product/'.$product->picture) }}">Add to Cart</button>
 
                   </div>
 
@@ -79,126 +79,62 @@
             </div>
 
         @endforeach
-
+              <div class="clearfix"></div>
            </div>
 
         </div>
-
-
-
-
 
 
 
 
         <div class="tab-pane  text-style" id="tab2">
           <div class=" con-w3l">
+          @foreach($offerSnacks as $product)
+
             <div class="col-md-3 m-wthree">
               <div class="col-m">
                 <a href="#" data-toggle="modal" data-target="#myModal5" class="offer-img">
-                  <img src="images/of4.png" class="img-responsive" alt="">
+                  <img src="{{ asset('images/product/'.$product->picture) }}" class="img-responsive" alt="" height="300px" width="300px">
                   <div class="offer"><p><span>Offer</span></p></div>
                 </a>
                 <div class="mid-1">
                   <div class="women">
-                    <h6><a href="single.html">Lays</a>(100 g)</h6>
+                    <h6><a href="single.html">{{$product->title}}</a>(100 g)</h6>
                   </div>
                   <div class="mid-2">
-                    <p ><label>$1.00</label><em class="item_price">$0.70</em></p>
+                    <p ><label>${{$product->cost}}.00</label><em class="item_price">${{$product->special_price}}.00</em></p>
                       <div class="block">
                       <div class="starbox small ghosting"> </div>
                     </div>
                     <div class="clearfix"></div>
                   </div>
                     <div class="add">
-                     <button class="btn btn-danger my-cart-btn my-cart-b" data-id="5" data-name="Lays" data-summary="summary 5" data-price="0.70" data-quantity="1" data-image="images/of4.png">Add to Cart</button>
+                      <button class="btn btn-danger  my-cart-b " data-id="{{$product->id}}" data-name="{{$product->title}}" data-summary="summary 1" data-price="{{$product->special_price}}" data-quantity="1" data-image="{{ asset('images/product/'.$product->picture) }}">Add to Cart</button>
+
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-3 m-wthree">
-              <div class="col-m">
-                <a href="#" data-toggle="modal" data-target="#myModal6" class="offer-img">
-                  <img src="images/of5.png" class="img-responsive" alt="">
-                  <div class="offer"><p><span>Offer</span></p></div>
-                </a>
-                <div class="mid-1">
-                  <div class="women">
-                    <h6><a href="single.html">Kurkure</a>(100 g)</h6>
-                  </div>
-                  <div class="mid-2">
-                    <p ><label>$1.00</label><em class="item_price">$0.70</em></p>
-                      <div class="block">
-                      <div class="starbox small ghosting"> </div>
-                    </div>
-                    <div class="clearfix"></div>
-                  </div>
-                    <div class="add">
-                     <button class="btn btn-danger my-cart-btn my-cart-b" data-id="6" data-name="Kurkure" data-summary="summary 6" data-price="0.70" data-quantity="1" data-image="images/of5.png">Add to Cart</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 m-wthree">
-              <div class="col-m">
-                <a href="#" data-toggle="modal" data-target="#myModal7" class="offer-img">
-                  <img src="images/of6.png" class="img-responsive" alt="">
-                  <div class="offer"><p><span>Offer</span></p></div>
-                </a>
-                <div class="mid-1">
-                  <div class="women">
-                    <h6><a href="single.html">Popcorn</a>(250 g)</h6>
-                  </div>
-                  <div class="mid-2">
-                    <p ><label>$2.00</label><em class="item_price">$1.00</em></p>
-                      <div class="block">
-                      <div class="starbox small ghosting"> </div>
-                    </div>
-                    <div class="clearfix"></div>
-                  </div>
-                    <div class="add">
-                     <button class="btn btn-danger my-cart-btn my-cart-b" data-id="7" data-name="Popcorn" data-summary="summary 7" data-price="1.00" data-quantity="1" data-image="images/of6.png">Add to Cart</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 m-wthree">
-              <div class="col-m">
-                <a href="#" data-toggle="modal" data-target="#myModal8" class="offer-img">
-                  <img src="images/of7.png" class="img-responsive" alt="">
-                  <div class="offer"><p><span>Offer</span></p></div>
-                </a>
-                <div class="mid-1">
-                  <div class="women">
-                    <h6><a href="single.html">Nuts</a>(250 g)</h6>
-                  </div>
-                  <div class="mid-2">
-                    <p ><label>$4.00</label><em class="item_price">$3.50</em></p>
-                      <div class="block">
-                      <div class="starbox small ghosting"> </div>
-                    </div>
-                    <div class="clearfix"></div>
-                  </div>
-                    <div class="add">
-                     <button class="btn btn-danger my-cart-btn my-cart-b" data-id="8" data-name="Nuts" data-summary="summary 8" data-price="3.50" data-quantity="1" data-image="images/of7.png">Add to Cart</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+        @endforeach
             <div class="clearfix"></div>
            </div>
         </div>
+
+
         <div class="tab-pane  text-style" id="tab3">
           <div class=" con-w3l">
+          @foreach($offerFruits as $product)
+
             <div class="col-md-3 m-wthree">
               <div class="col-m">
               <a href="#" data-toggle="modal" data-target="#myModal9" class="offer-img">
-                  <img src="images/of8.png" class="img-responsive" alt="">
+                  <img src="{{ asset('images/product/'.$product->picture) }}" class="img-responsive" alt="" height="300px" width="300px">
                   <div class="offer"><p><span>Offer</span></p></div>
                 </a>
                 <div class="mid-1">
                   <div class="women">
-                    <h6><a href="single.html">Banana</a>(6 pcs)</h6>
+                    <h6><a href="single.html">{{$product->title}}</a>(6 pcs)</h6>
                   </div>
                   <div class="mid-2">
                     <p ><label>$2.00</label><em class="item_price">$1.50</em></p>
@@ -208,177 +144,48 @@
                     <div class="clearfix"></div>
                   </div>
                     <div class="add">
-                     <button class="btn btn-danger my-cart-btn my-cart-b" data-id="9" data-name="Banana" data-summary="summary 9" data-price="1.50" data-quantity="1" data-image="images/of8.png">Add to Cart</button>
+                     <button class="btn btn-danger  my-cart-b" data-id="9" data-name="Banana" data-summary="summary 9" data-price="1.50" data-quantity="1" data-image="images/of8.png">Add to Cart</button>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-3 m-wthree">
-              <div class="col-m">
-                <a href="#" data-toggle="modal" data-target="#myModal10" class="offer-img">
-                  <img src="images/of9.png" class="img-responsive" alt="">
-                  <div class="offer"><p><span>Offer</span></p></div>
-                </a>
-                <div class="mid-1">
-                  <div class="women">
-                    <h6><a href="single.html">Onion</a>(1 kg)</h6>
-                  </div>
-                  <div class="mid-2">
-                    <p ><label>$1.00</label><em class="item_price">$0.70</em></p>
-                      <div class="block">
-                      <div class="starbox small ghosting"> </div>
-                    </div>
-                    <div class="clearfix"></div>
-                  </div>
-                    <div class="add">
-                     <button class="btn btn-danger my-cart-btn my-cart-b" data-id="10" data-name="Onion" data-summary="summary 10" data-price="0.70" data-quantity="1" data-image="images/of9.png">Add to Cart</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 m-wthree">
-              <div class="col-m">
-                <a href="#" data-toggle="modal" data-target="#myModal11" class="offer-img">
-                  <img src="images/of10.png" class="img-responsive" alt="">
-                  <div class="offer"><p><span>Offer</span></p></div>
-                </a>
-                <div class="mid-1">
-                  <div class="women">
-                    <h6><a href="single.html"> Bitter Gourd</a>(1 kg)</h6>
-                  </div>
-                  <div class="mid-2">
-                    <p ><label>$2.00</label><em class="item_price">$1.00</em></p>
-                      <div class="block">
-                      <div class="starbox small ghosting"> </div>
-                    </div>
-                    <div class="clearfix"></div>
-                  </div>
-                    <div class="add">
-                     <button class="btn btn-danger my-cart-btn my-cart-b" data-id="11" data-name="Bitter Gourd" data-summary="summary 11" data-price="1.00" data-quantity="1" data-image="images/of10.png">Add to Cart</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 m-wthree">
-              <div class="col-m">
-                <a href="#" data-toggle="modal" data-target="#myModal12" class="offer-img">
-                  <img src="images/of11.png" class="img-responsive" alt="">
-                  <div class="offer"><p><span>Offer</span></p></div>
-                </a>
-                <div class="mid-1">
-                  <div class="women">
-                    <h6><a href="single.html">Apples</a>(1 kg)</h6>
-                  </div>
-                  <div class="mid-2">
-                    <p ><label>$4.00</label><em class="item_price">$3.50</em></p>
-                      <div class="block">
-                      <div class="starbox small ghosting"> </div>
-                    </div>
-                    <div class="clearfix"></div>
-                  </div>
-                    <div class="add">
-                     <button class="btn btn-danger my-cart-btn my-cart-b" data-id="12" data-name="Apples" data-summary="summary 12" data-price="3.50" data-quantity="1" data-image="images/of11.png">Add to Cart</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+
+          @endforeach
             <div class="clearfix"></div>
            </div>
         </div>
+
+
         <div class="tab-pane text-style" id="tab4">
             <div class=" con-w3l">
-            <div class="col-md-3 m-wthree">
-              <div class="col-m">
-              <a href="#" data-toggle="modal" data-target="#myModal13" class="offer-img">
-                  <img src="images/of12.png" class="img-responsive" alt="">
-                  <div class="offer"><p><span>Offer</span></p></div>
-                </a>
-                <div class="mid-1">
-                  <div class="women">
-                    <h6><a href="single.html">Honey</a>(500 g)</h6>
-                  </div>
-                  <div class="mid-2">
-                    <p ><label>$7.00</label><em class="item_price">$6.00</em></p>
-                      <div class="block">
-                      <div class="starbox small ghosting"> </div>
+             @foreach($offerBreakfast as $product)
+
+                 <div class="col-md-3 m-wthree">
+                  <div class="col-m">
+                  <a href="#" data-toggle="modal" data-target="#myModal13" class="offer-img">
+                      <img src="{{ asset('images/product/'.$product->picture) }}" class="img-responsive" alt="" height="300px" width="300px">
+                      <div class="offer"><p><span>Offer</span></p></div>
+                    </a>
+                    <div class="mid-1">
+                      <div class="women">
+                        <h6><a href="single.html">{{$product->title}}</a>(500 g)</h6>
+                      </div>
+                      <div class="mid-2">
+                        <p ><label>$2.00</label><em class="item_price">$1.50</em></p>
+                          <div class="block">
+                          <div class="starbox small ghosting"> </div>
+                        </div>
+                        <div class="clearfix"></div>
+                      </div>
+                        <div class="add">
+                          <button class="btn btn-danger my-cart-b" data-id="9" data-name="Banana" data-summary="summary 9" data-price="1.50" data-quantity="1" data-image="images/of8.png">Add to Cart</button>
+                        </div>
                     </div>
-                    <div class="clearfix"></div>
-                  </div>
-                    <div class="add">
-                     <button class="btn btn-danger my-cart-btn my-cart-b" data-id="13" data-name="Honey" data-summary="summary 13" data-price="6.00" data-quantity="1" data-image="images/of12.png">Add to Cart</button>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-md-3 m-wthree">
-              <div class="col-m ">
-                <a href="#" data-toggle="modal" data-target="#myModal14" class="offer-img">
-                  <img src="images/of13.png" class="img-responsive" alt="">
-                  <div class="offer"><p><span>Offer</span></p></div>
-                </a>
-                <div class="mid-1">
-                  <div class="women">
-                    <h6><a href="single.html">Chocos</a>(250 g)</h6>
-                  </div>
-                  <div class="mid-2">
-                    <p ><label>$5.00</label><em class="item_price">$4.50</em></p>
-                      <div class="block">
-                      <div class="starbox small ghosting"> </div>
-                    </div>
-                    <div class="clearfix"></div>
-                  </div>
-                    <div class="add">
-                     <button class="btn btn-danger my-cart-btn my-cart-b" data-id="14" data-name="Chocos" data-summary="summary 14" data-price="4.50" data-quantity="1" data-image="images/of13.png">Add to Cart</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 m-wthree">
-              <div class="col-m ">
-                <a href="#" data-toggle="modal" data-target="#myModal15" class="offer-img">
-                  <img src="images/of14.png" class="img-responsive" alt="">
-                  <div class="offer"><p><span>Offer</span></p></div>
-                </a>
-                <div class="mid-1">
-                  <div class="women">
-                    <h6><a href="single.html">Oats</a>(1 kg)</h6>
-                  </div>
-                  <div class="mid-2">
-                    <p ><label>$4.00</label><em class="item_price">$3.50</em></p>
-                      <div class="block">
-                      <div class="starbox small ghosting"> </div>
-                    </div>
-                    <div class="clearfix"></div>
-                  </div>
-                    <div class="add">
-                     <button class="btn btn-danger my-cart-btn my-cart-b" data-id="15" data-name="Oats" data-summary="summary 15" data-price="3.50" data-quantity="1" data-image="images/of14.png">Add to Cart</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-3 m-wthree">
-              <div class="col-m">
-                <a href="#" data-toggle="modal" data-target="#myModal16" class="offer-img">
-                  <img src="images/of15.png" class="img-responsive" alt="">
-                  <div class="offer"><p><span>Offer</span></p></div>
-                </a>
-                <div class="mid-1">
-                  <div class="women">
-                    <h6><a href="single.html">Bread</a>(500 g)</h6>
-                  </div>
-                  <div class="mid-2">
-                    <p ><label>$1.00</label><em class="item_price">$0.80</em></p>
-                      <div class="block">
-                      <div class="starbox small ghosting"> </div>
-                    </div>
-                    <div class="clearfix"></div>
-                  </div>
-                    <div class="add">
-                     <button class="btn btn-danger my-cart-btn my-cart-b" data-id="16" data-name="Bread" data-summary="summary 16" data-price="0.80" data-quantity="1" data-image="images/of15.png">Add to Cart</button>
-                  </div>
-                </div>
-              </div>
-            </div>
+
+            @endforeach
             <div class="clearfix"></div>
            </div>
         </div>
@@ -482,7 +289,7 @@
 <div class="product">
   <div class="container">
     <div class="spec ">
-      <h3>Special Offers</h3>
+      <h3>Regular Products</h3>
       <div class="ser-t">
         <b></b>
         <span><i></i></span>
@@ -490,13 +297,15 @@
       </div>
     </div>
     @foreach($products as $product)
-      <div class=" con-w3l">
+
+        <div class=" con-w3l">
 
             <div class="col-md-3 pro-1">
               <div class="col-m">
+
               <a href="#" data-toggle="modal" data-target="#myModal17" class="offer-img">
-                  <img src="{{ asset('images/product/'.$product->picture) }}" class="img-responsive" alt="">
-                </a>
+                  <img src="{{ asset('images/product/'.$product->picture) }}" class="img-responsive" alt="" height="320px" width="320px">
+              </a>
                 <div class="mid-1">
                   <div class="women">
                     <h6><a href="{{url('/single', $product->id)}}">{{$product->title}}</a>(500 g)</h6>
@@ -508,12 +317,14 @@
                     </div>
                     <div class="clearfix"></div>
                   </div>
-
-                     <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="{{$product->id}}" data-name="{{$product->title}}" data-summary="summary 24" data-price="{{$product->special_price}}" data-quantity="1" data-image="{{ asset('images/product/'.$product->picture) }}">Add to Cart</button>
+                      <a href="{{url('/single', $product->id)}}" type="submit" class="btn btn-danger my-cart-b ">cart</a>
+                     <button type="submit" class="btn btn-danger my-cart-b ">Add to Cart</button>
                   </div>
+
                 </div>
               </div>
             </div>
+
     @endforeach
             <div class="clearfix"></div>
 

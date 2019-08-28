@@ -14,18 +14,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-      try{
 
           $products = Product::all();
           return view('table.products.index', compact('products'));
 
-      }catch(QueryException $e){
-
-          return redirect()
-              ->route('404_blade')
-              ->withInput()
-              ->withErrors($e->getMessage());
-      }
     }
 
     /**
@@ -53,12 +45,12 @@ class ProductController extends Controller
                 $fileName = $request->title.'-'.$request->image->getClientOriginalName();
                 $request->image->move(public_path('/images/product/'), $fileName);
                 $data['picture']=$fileName;
+
+                Product::create($data);
             }
-            else{
-                $data['picture'] = null;
-            }
+
             //dd($data);
-            Product::create($data);
+
 
             //return redirect()->route('labs.index')->withMessage('Lab is Inserted Successfully.');
             //return redirect()->route('slider.index')->with('message','Slider is Inserted Successfully.');
@@ -150,5 +142,15 @@ class ProductController extends Controller
               ->route('product.index')
               ->withErrors($e->getMessage());
         }
+    }
+
+    public function singlePostShow(Request $request, $id){
+      //dd($id);
+      //$lol = $request->session()->get('key');
+      //dd($lol);
+      //dd($request);
+       $product = Product::findOrFail($id);
+       return view('theme.single', compact('product'));
+      //return "hi";
     }
 }
