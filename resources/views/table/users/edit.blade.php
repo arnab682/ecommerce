@@ -12,7 +12,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header bg-light">
-                    Banner Create :
+                    User Create :
                 </div>
                 @if(Session::has('success'))
                   <div class="alert alert-success">{{Session::get('success')}}</div>
@@ -27,7 +27,7 @@
                     </ul>
                   </div>
                 @endif
-                <form action="{{url('/user')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('user.update',$user->id)}}" method="post" enctype="multipart/form-data">
               		 {{ csrf_field() }} {{ method_field('put') }}
 
                   <div class="card-body">

@@ -166,7 +166,9 @@ Route::prefix('admin')->group(function(){
   Route::resource('product', 'ProductController');
 
   //SliderShow
-  Route::get('sliderShow', 'SliderController@display');
+  Route::get('sliderPdf', 'SliderController@downloadpdf')->name('sliderPdf');
+  Route::get('sliderXl', 'SliderController@downloadxl')->name('sliderXl');
+
   Route::resource('slider', 'SliderController');
 
 });

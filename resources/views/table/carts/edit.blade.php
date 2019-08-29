@@ -16,7 +16,7 @@
                 </div>
 
 
-                <form action="{{url('/cart/'.$cart->id)}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('cart.update',$cart->id)}}" method="post" enctype="multipart/form-data">
                     @csrf
                     {{ method_field('PUT') }}
 

@@ -15,7 +15,7 @@
                     Contact Update :
                 </div>
 
-                <form class="" action="{{url('/contact/'.$contact->id)}}" method="post">@csrf
+                <form class="" action="{{route('contact.update',$contact->id)}}" method="post" enctype="multipart/form-data">@csrf
                   {{ method_field('put') }}
                   <div class="card-body">
                       <div class="row">

@@ -29,7 +29,7 @@
                 @endif
 
 
-                <form action="{{url('/cart')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('cart.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
 
                     <div class="card-body">

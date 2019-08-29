@@ -27,7 +27,7 @@
                     </ul>
                   </div>
                 @endif
-                <form class="" action="{{url('/label')}}" method="post" enctype="multipart/form-data">@csrf
+                <form class="" action="{{route('label.store')}}" method="post" enctype="multipart/form-data">@csrf
                   <div class="card-body">
                       <div class="row">
                           <div class="col-md-8">
@@ -46,7 +46,7 @@
                             </div>
                           </div>
                       </div>
-                    
+
                   <button class="btn btn-success" type="submit">Create Post</button>
                   <button class="btn btn-success" type="reset">Reset</button>
                   </div>

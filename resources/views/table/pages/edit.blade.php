@@ -15,7 +15,7 @@
                     Page Update :
                 </div>
 
-                <form class="" action="{{url('/page/'.$page->id)}}" method="post">@csrf
+                <form class="" action="{{route('page.update',$page->id)}}" method="post">@csrf
                   {{ method_field('put') }}
                   <div class="card-body">
                       <div class="row">

@@ -27,7 +27,7 @@
                     </ul>
                   </div>
                 @endif
-                <form class="" action="{{url('/category')}}" method="post">@csrf
+                <form class="" action="{{route('category.store')}}" method="post" enctype="multipart/form-data">@csrf
                   <div class="card-body">
                       <div class="row">
                           <div class="col-md-8">
@@ -43,7 +43,8 @@
                           <div class="col-md-8">
                             <div class="form-group">
                                 <label for="exampleInputFile" class="form-control-label">File input :</label><br>
-                                <input type="file" name="image" id="exampleInputFile" class="form-control">
+                                <input type="file" name="image" id="image" class="form-control">
+
                             </div>
                           </div>
                       </div>

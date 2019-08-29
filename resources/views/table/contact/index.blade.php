@@ -10,7 +10,7 @@
     <div class="content">
     <div class="row">
         <div class="col-md-12">
-          <div><a href="{{url('/contact/create')}}" class="btn btn-success">Add New</a>
+          <div><a href="{{route('contact.create')}}" class="btn btn-success">Add New</a>
               <a href="" class="btn btn-primary">PDF</a>
               <a href="" class="btn btn-info">XL</a>
               <button onclick="print()">Print</button>
@@ -50,7 +50,7 @@
                  <td>{{$contact->datetime}}</td>
                  <td></a>
                       <a href="{{route('contact.edit',$contact->id)}}">Edit</a>|
-                     {!! Form::open(array('url' => ['contact',$contact->id],'onclick'=>"return confirm('Are you sure you want to delete this item?');",'method' => 'DELETE')) !!}
+                     {!! Form::open(array('route' => ['contact.destroy',$contact->id],'onclick'=>"return confirm('Are you sure you want to delete this item?');",'method' => 'DELETE')) !!}
 
                      <button type="submit" class="btn btn-primary">Delete</button>
                      {!! Form::close() !!}

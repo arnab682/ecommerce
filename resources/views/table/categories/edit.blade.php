@@ -15,7 +15,7 @@
                     Category Update :
                 </div>
 
-                <form class="" action="{{url('/category/'.$category->id)}}" method="post">@csrf
+                <form class="" action="{{route('category.update',$category->id)}}" method="post">@csrf
                   {{ method_field('put') }}
                   <div class="card-body">
                       <div class="row">
@@ -25,6 +25,16 @@
                                 <input type="text" value="{{$category->name}}" name="name" class="form-control">
                             </div>
 
+                          </div>
+                      </div>
+
+                      <div class="row">
+                          <div class="col-md-8">
+                            <div class="form-group">
+                                <label for="exampleInputFile" class="form-control-label">File input :</label><br>
+                                <input type="file" name="image" id="exampleInputFile" class="form-control">
+                                <img src="{{ asset('/images/category/'.$category->picture) }}" width="150"><br><br>
+                            </div>
                           </div>
                       </div>
 

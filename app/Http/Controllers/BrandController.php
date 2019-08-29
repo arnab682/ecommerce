@@ -103,7 +103,7 @@ class BrandController extends Controller
       $data = $request->all();
       $brand->update($data);
 
-      return redirect('brand')->with('message','Brand Updated !');
+      return back()->with('message','Brand Updated !');
     }
 
     /**

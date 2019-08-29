@@ -124,7 +124,7 @@ class BannerController extends Controller
                 $data['picture']=$banner->picture;
             }
             $banner->update($data);
-            return redirect('banner')->with('message','Banner Updated !');
+            return back()->with('message','Banner Updated !');
         }
         catch(QueryException $e){
             return redirect()

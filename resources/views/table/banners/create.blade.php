@@ -27,7 +27,7 @@
                     </ul>
                   </div>
                 @endif
-                <form class="" action="{{url('/banner')}}" method="post" enctype="multipart/form-data">@csrf
+                <form class="" action="{{route('banner.store')}}" method="post" enctype="multipart/form-data">@csrf
                   <div class="card-body">
                       <div class="row">
                           <div class="col-md-8">

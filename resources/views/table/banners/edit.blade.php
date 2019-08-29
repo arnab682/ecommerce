@@ -29,7 +29,7 @@
                 @endif
 
 
-                <form action="{{url('/banner/'.$banner->id)}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('banner.update',$banner->id)}}" method="post" enctype="multipart/form-data">
                     @csrf
 
                     {{ method_field('put') }}
@@ -84,8 +84,14 @@
                       <div class="row">
                           <div class="col-md-8">
                             <div class="form-group">
-                                <label class="form-control-label">Active :</label><br>
-                                <input type="text" value="{{$banner->is_active}}" name="is_active" class="form-control">
+                                <label class="form-control-label">Active :</label>
+                                @if($banner->is_active==1)
+                                    <input type="radio" name="is_active" value="1" checked>Yes
+                                    <input type="radio" name="is_active" value="0">No
+                                @else
+                                    <input type="radio" name="is_active" value="1">Yes
+                                    <input type="radio" name="is_active" value="0" checked>No
+                                @endif
                             </div>
                           </div>
                       </div>
@@ -94,7 +100,13 @@
                           <div class="col-md-8">
                             <div class="form-group">
                                 <label class="form-control-label">Draft :</label>
-                                <input type="text" value="{{$banner->is_draft}}" name="is_draft" class="form-control">
+                                @if($banner->is_draft==1)
+                                    <input type="radio" name="is_draft" value="1" checked>Yes
+                                    <input type="radio" name="is_draft" value="0">No
+                                @else
+                                    <input type="radio" name="is_draft" value="1">Yes
+                                    <input type="radio" name="is_draft" value="0" checked>No
+                                @endif
                             </div>
 
                           </div>
@@ -104,7 +116,13 @@
                           <div class="col-md-8">
                             <div class="form-group">
                                 <label class="form-control-label">Soft Delete :</label>
-                                <input type="text" value="{{$banner->soft_delete}}" name="soft_delete" class="form-control">
+                                @if($banner->soft_delete==1)
+                                    <input type="radio" name="soft_delete" value="1" checked>Yes
+                                    <input type="radio" name="soft_delete" value="0">No
+                                @else
+                                    <input type="radio" name="soft_delete" value="1">Yes
+                                    <input type="radio" name="soft_delete" value="0" checked>No
+                                @endif
                             </div>
 
                           </div>

@@ -44,26 +44,38 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-      try {
+     public function store(Request $request)
+     {
+       try{
+             //dd($request->input());
+             if($request->hasFile('image')) {
+                 $data = $request->all();
+                 $fileName = $request->name.time().'-'.$request->image->getClientOriginalName();
+                 $request->image->move(public_path('/images/category/'), $fileName);
+                 $data['picture']=$fileName;
 
-          $data = $request->all();
-          //dd($data);
-          Category::create($data);
+             }
+             else{
+                 $data['picture'] = null;
+                 //$data = $request->all();
+             }
 
-          //return redirect()->route('labs.index')->withMessage('Lab is Inserted Successfully.');
-          //return redirect()->route('slider.index')->with('message','Slider is Inserted Successfully.');
-          return back();
+             //dd($data);
+             //dd($data['picture']);
+             Category::create($data);
 
-      }catch(QueryException $e){
+             //return redirect()->route('labs.index')->withMessage('Lab is Inserted Successfully.');
+             //return redirect()->route('slider.index')->with('message','Slider is Inserted Successfully.');
+             return back();
 
-          return redirect()
-              ->route('categories.create')
-              ->withInput()
-              ->withErrors($e->getMessage());
-      }
-    }
+         }catch(QueryException $e){
+
+             return redirect()
+                 ->route('banner.create')
+                 ->withInput()
+                 ->withErrors($e->getMessage());
+         }
+     }
 
     /**
      * Display the specified resource.

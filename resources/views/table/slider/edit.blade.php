@@ -28,7 +28,7 @@
                   </div>
                 @endif
 
-    <form action="{{url('/slider/'.$slider->id)}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('slider.update',$slider->id)}}" method="post" enctype="multipart/form-data">
         @csrf
 
         {{ method_field('put') }}

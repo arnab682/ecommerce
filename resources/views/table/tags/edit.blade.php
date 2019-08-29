@@ -27,7 +27,7 @@
                     </ul>
                   </div>
                 @endif
-                <form class="" action="{{url('/tag/'.$tag->id)}}" method="post">@csrf
+                <form class="" action="{{route('tag.update',$tag->id)}}" method="post" enctype="multipart/form-data">@csrf
                   {{method_field('put')}}
                   <div class="card-body">
                       <div class="row">

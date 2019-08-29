@@ -10,7 +10,7 @@
     <div class="content">
     <div class="row">
         <div class="col-md-12">
-          <div><a href="{{url('/product/create')}}" class="btn btn-success">Add New</a>
+          <div><a href="{{route('product.create')}}" class="btn btn-success">Add New</a>
               <a href="" class="btn btn-primary">PDF</a>
               <a href="" class="btn btn-info">XL</a>
               <button onclick="print()" class="btn btn-dark">Print</button>
@@ -48,7 +48,7 @@
                                    <td>{{$product->product_type}}</td>
                                    <td></a>
                                         <a href="{{route('product.edit',$product->id)}}">Edit</a>|
-                                       {!! Form::open(array('url' => ['product',$product->id],'onclick'=>"return confirm('Are you sure you want to delete this item?');",'method' => 'DELETE')) !!}
+                                       {!! Form::open(array('route' => ['product.destroy',$product->id],'onclick'=>"return confirm('Are you sure you want to delete this item?');",'method' => 'DELETE')) !!}
 
                                        <button type="submit" class="btn btn-primary">Delete</button>
                                        {!! Form::close() !!}

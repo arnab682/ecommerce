@@ -21,7 +21,7 @@
 
                         <li class="nav-item">
                             <a href="{{route('user.index')}}" class="nav-link">
-                                <i class=""></i> User Index
+                                <i class="icon icon-user"></i> User Index
                             </a>
                         </li>
                     </ul>
@@ -37,6 +37,21 @@
                         <li class="nav-item">
                             <a href="{{route('banner.index')}}" class="nav-link">
                                 <i class="icon icon-user"></i> Banner Index
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item nav-dropdown">
+                    <a href="#" class="nav-link nav-dropdown-toggle">
+                        <i class="icon icon-target"></i> Slider <i class="fa fa-caret-left"></i>
+                    </a>
+
+                    <ul class="nav-dropdown-items">
+
+                        <li class="nav-item">
+                            <a href="{{route('slider.index')}}" class="nav-link">
+                                <i class="icon icon-user"></i> Slider Index
                             </a>
                         </li>
                     </ul>

@@ -1,45 +1,46 @@
-@extends('layoutSlider.pdfdefault')
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="{{asset('css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
+</head>
+<body>
 
-@section('content')
+    <table  class="table table-bordered">
+        <thead class="" style=" text-color: dark;">
+            <tr>
+                <th style="text-align: center;">No.</th>
+                <th style="text-align: center;">Title</th>
+                <th style="text-align: center;">Image</th>
+                <th style="text-align: center;">Caption</th>
+                <th style="text-align: center;">Link</th>
+                <th style="text-align: center;">Created At</th>
+                <th style="text-align: center;">Modified At</th>
 
-
-    <table id="dt_table" class="table table-bordered">
-        <thead class="">
-        <tr>
-            <th>Sl.</th>
-            <th>Image Title</th>
-
-            <th>Caption</th>
-            <th>Link</th>
-            <th>Active</th>
-            <th>Created At</th>
-            <th>Modified At</th>
-
-        </tr>
+            </tr>
         </thead>
         @php
             $sl = 0;
         @endphp
         @foreach($sliders as $slider)
             <tr>
-                <td>{{++$sl}}</td>
-                {{--<td><a href={{url('labs',$slider->id)}}>{{$slider['title']}} </a></td>--}}
-                <td><a href={{route('slider.show',$slider->id)}}>{{$slider['title']}} </a></td>
-
-                            <td>{{$slider['caption']}}</td>
-                <td><a href={{route('slider.show',$slider->id)}}}}">{{$slider['link']}}</a></td>
-                @if($slider->is_active==1)
-                    <td> Active </td>
-                    @else
-                    <td>De Active</td>
-                @endif
-                <td>{{$slider['created_at']}}</td>
-                <td>{{$slider['updated_at']}}</td>
+                <td style="text-align: center;">{{++$sl}}.</td>
+                <td style="text-align: center;">{{$slider->title}}</td>
+                <td style="text-align: center;"> <img src="{{ asset('/images/slider/'.$slider->picture) }}" width="100" height="60"> </td>
+                <td style="text-align: center;">{{$slider->caption}}</td>
+                <td style="text-align: center;">{{$slider->link}}</td>
+                <td style="text-align: center;">{{$slider['created_at']}}</td>
+                <td style="text-align: center;">{{$slider['updated_at']}}</td>
 
             </tr>
         @endforeach
     </table>
 
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
 
-@endsection
-
+</body>

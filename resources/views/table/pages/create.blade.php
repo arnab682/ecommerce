@@ -27,7 +27,7 @@
                     </ul>
                   </div>
                 @endif
-                <form class="" action="{{url('/page')}}" method="post">@csrf
+                <form class="" action="{{route('page.store')}}" method="post" enctype="multipart/form-data">@csrf
                   <div class="card-body">
                       <div class="row">
                           <div class="col-md-8">

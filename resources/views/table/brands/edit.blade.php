@@ -29,7 +29,7 @@
                 @endif
 
 
-                <form action="{{url('/brand').'/'.$brand->id}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('brand.update', $brand->id)}}" method="post" enctype="multipart/form-data">
                   {{ csrf_field() }}
                   {{ method_field('PUT') }}
 
@@ -47,7 +47,13 @@
                           <div class="col-md-8">
                             <div class="form-group">
                                 <label class="form-control-label">Draft :</label>
-                                <input type="text" value="{{ $brand->is_draft }}" name="is_draft" class="form-control">
+                                @if($brand->is_draft==1)
+                                    <input type="radio" name="is_draft" value="1" checked>Yes
+                                    <input type="radio" name="is_draft" value="0">No
+                                @else
+                                    <input type="radio" name="is_draft" value="1">Yes
+                                    <input type="radio" name="is_draft" value="0" checked>No
+                                @endif
                             </div>
 
                           </div>
@@ -57,7 +63,13 @@
                           <div class="col-md-8">
                             <div class="form-group">
                                 <label class="form-control-label">Active :</label>
-                                <input type="text" value="{{$brand->is_active}}" name="is_active" class="form-control">
+                                @if($brand->is_active==1)
+                                    <input type="radio" name="is_active" value="1" checked>Yes
+                                    <input type="radio" name="is_active" value="0">No
+                                @else
+                                    <input type="radio" name="is_active" value="1">Yes
+                                    <input type="radio" name="is_active" value="0" checked>No
+                                @endif
                             </div>
 
                           </div>
@@ -67,7 +79,13 @@
                           <div class="col-md-8">
                             <div class="form-group">
                                 <label class="form-control-label">Soft Delete :</label>
-                                <input type="text" value="{{$brand->soft_delete}}" name="soft_delete" class="form-control">
+                                @if($brand->soft_delete==1)
+                                    <input type="radio" name="soft_delete" value="1" checked>Yes
+                                    <input type="radio" name="soft_delete" value="0">No
+                                @else
+                                    <input type="radio" name="soft_delete" value="1">Yes
+                                    <input type="radio" name="soft_delete" value="0" checked>No
+                                @endif
                             </div>
 
                           </div>

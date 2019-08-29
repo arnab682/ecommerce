@@ -15,7 +15,7 @@
                     Subscriber Update :
                 </div>
 
-                <form class="" action="{{url('/subscriber/'.$subscriber->id)}}" method="post">@csrf
+                <form class="" action="{{route('subscriber.update',$subscriber->id)}}" method="post" enctype="multipart/form-data">@csrf
                   {{ method_field('put') }}
                   <div class="card-body">
                       <div class="row">

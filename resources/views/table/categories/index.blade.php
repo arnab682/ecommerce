@@ -10,7 +10,7 @@
     <div class="content">
     <div class="row">
         <div class="col-md-12">
-          <div><a href="{{url('/category/create')}}" class="btn btn-success">Add New</a>
+          <div><a href="{{route('category.create')}}" class="btn btn-success">Add New</a>
               <a href="" class="btn btn-primary">PDF</a>
               <a href="" class="btn btn-info">XL</a>
               <button onclick="print()" class="btn btn-dark">Print</button>
@@ -44,7 +44,7 @@
                        <td>{{$category->link}}</td>
                        <td></a>
                             <a href="{{route('category.edit',$category->id)}}">Edit</a>|
-                           {!! Form::open(array('url' => ['category',$category->id],'onclick'=>"return confirm('Are you sure you want to delete this item?');",'method' => 'DELETE')) !!}
+                           {!! Form::open(array('route' => ['category.destroy',$category->id],'onclick'=>"return confirm('Are you sure you want to delete this item?');",'method' => 'DELETE')) !!}
 
                            <button type="submit" class="btn btn-primary">Delete</button>
                            {!! Form::close() !!}

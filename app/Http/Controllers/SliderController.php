@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Model\Slider;
 use Illuminate\Http\Request;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
 
 class SliderController extends Controller
 {
@@ -52,7 +55,7 @@ class SliderController extends Controller
               else{
                   $data['picture'] = null;
               }
-              //dd($data);
+              dd($data);
               Slider::create($data);
 
               //return redirect()->route('labs.index')->withMessage('Lab is Inserted Successfully.');
@@ -151,4 +154,50 @@ class SliderController extends Controller
               ->withErrors($e->getMessage());
         }
     }
+
+    public function pdf(){
+      $sliders = Slider::all();
+      //dd($sliders);
+      return view('table.slider.downloadpdf', compact('sliders'));
+    }
+
+
+    public function downloadxl(){
+
+
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        $sheet->setCellValue('A1', 'Hello World !');
+        $sheet->setCellValue('A2', 'Hello World !');
+
+        $writer = new Xlsx($spreadsheet);
+        header('Content-Type: application/vnd.ms-excel');
+        header('Content-Disposition: attachment;filename="'.'helloworld'.'.xls"'); /*-- $filename is  xsl filename ---*/
+        header('Cache-Control: max-age=0');
+
+        //$Excel_writer->save('php://output');
+        $writer->save('php://output');
+    }
+
+    public function downloadpdf(){
+
+
+        try {
+            error_reporting(0);
+            app('debugbar')->disable();
+            $sliders=Slider::all();
+            $html =  view('table.slider.downloadpdf', compact('sliders'))->render();
+            $mpdf = new \Mpdf\Mpdf();
+            $mpdf->debug = true;
+            $mpdf->WriteHTML($html);
+            $mpdf->Output();
+            //$mpdf->Output(public_path('/images/slider').'/asdfsdf1.pdf','F');
+        } catch (\Mpdf\MpdfException $e) { // Note: safer fully qualified exception
+            //       name used for catch
+            // Process the exception, log, print etc.
+            echo $e->getMessage();
+        }
+
+    }
+
 }

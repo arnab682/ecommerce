@@ -10,9 +10,9 @@
     <div class="content">
     <div class="row">
         <div class="col-md-12">
-          <div><a href="{{url('/slider/create')}}" class="btn btn-success">Add New</a>
-              <a href="" class="btn btn-primary">PDF</a>
-              <a href="" class="btn btn-info">XL</a>
+          <div><a href="{{route('slider.create')}}" class="btn btn-success">Add New</a>
+              <a href="{{route('sliderPdf')}}" class="btn btn-primary">PDF</a>
+              <a href="{{route('sliderXl')}}" class="btn btn-info">XL</a>
               <button onclick="print()" class="btn btn-dark">Print</button>
           </div>
             <div class="card">
@@ -37,9 +37,9 @@
                 @endif -->
 
 
-              <div class="card-body">
-                  <div class="table-responsive">
-                      <table class="table table-striped">
+  <div class="card-body">
+      <div class="table-responsive">
+          <table class="table table-striped">
 
 
 
@@ -60,7 +60,7 @@
         @foreach($sliders as $slider)
             <tr>
                 <td>{{++$sl}}</td>
-                {{--<td><a href="{{url('labs',$slider->id)}}">{{$slider['title']}} </a></td>--}}
+
                 <td><a href="{{route('slider.show',$slider->id)}}">{{$slider['title']}} </a></td>
 
                 <td>
@@ -88,7 +88,7 @@
                 <td>{{$slider['updated_at']}}</td>
                 <td>
                      <a href="{{route('slider.edit',$slider->id)}}">Edit</a>|
-                    {!! Form::open(array('url' => ['slider',$slider->id],'onclick'=>"return confirm('Are you sure you want to delete this item?');",'method' => 'DELETE')) !!}
+                    {!! Form::open(array('route' => ['slider.destroy',$slider->id],'onclick'=>"return confirm('Are you sure you want to delete this item?');",'method' => 'DELETE')) !!}
                     <!-- {{--{!! Form::open(array('route' => ['labs.destroy',$slider->id],'method' => 'DELETE')) !!}--}} -->
                     <button type="submit" class="btn btn-primary">Delete</button>
                     {!! Form::close() !!}

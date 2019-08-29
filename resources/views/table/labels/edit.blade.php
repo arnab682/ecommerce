@@ -15,7 +15,7 @@
                     Label Update :
                 </div>
 
-                <form class="" action="{{url('/label/'.$label->id)}}" method="post">@csrf
+                <form class="" action="{{route('label.update',$label->id)}}" method="post" enctype="multipart/form-data">@csrf
                   {{ method_field('put') }}
                   <div class="card-body">
                       <div class="row">

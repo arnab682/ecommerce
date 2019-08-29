@@ -12,10 +12,10 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header bg-light">
-                    Subscriber Update :
+                    Testimonial Update :
                 </div>
 
-                <form class="" action="{{url('/testimonial/'.$testimonial->id)}}" method="post">@csrf
+                <form class="" action="{{route('testimonial.update',$testimonial->id)}}" method="post" enctype="multipart/form-data">@csrf
                   {{ method_field('put') }}
                   <div class="card-body">
                       <div class="row">

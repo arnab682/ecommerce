@@ -11,7 +11,7 @@
     <div class="content">
     <div class="row">
         <div class="col-md-12">
-          <div><a href="{{url('/user/create')}}" class="btn btn-success">Add New</a>
+          <div><a href="{{route('user.create')}}" class="btn btn-success">Add New</a>
               <a href="" class="btn btn-primary">PDF</a>
               <a href="" class="btn btn-info">XL</a>
               <button onclick="print()">Print</button>
@@ -51,7 +51,7 @@
                                     <td>{{$user->updated_at}}</td>
                                     <td>
                                          <a href="{{route('user.edit',$user->id)}}" class="btn btn-warning"><i class="icon icon-pencil"></i></a>|
-                                        {!! Form::open(array('url' => ['user',$user->id],'onclick'=>"return confirm('Are you sure you want to delete this item?');",'method' => 'DELETE')) !!}
+                                        {!! Form::open(array('route' => ['user.destroy',$user->id],'onclick'=>"return confirm('Are you sure you want to delete this item?');",'method' => 'DELETE')) !!}
 
                                         <button type="submit" class="btn btn-danger">X</button>
                                         {!! Form::close() !!}

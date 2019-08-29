@@ -128,7 +128,7 @@ class CartController extends Controller
                 $data['picture']=$cart->picture;
             }
             $cart->update($data);
-            return redirect('cart')->with('message','Cart Updated !');
+            return back()->with('message','Cart Updated !');
         }
         catch(QueryException $e){
             return redirect()
