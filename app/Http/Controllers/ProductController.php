@@ -54,7 +54,7 @@ class ProductController extends Controller
 
             //return redirect()->route('labs.index')->withMessage('Lab is Inserted Successfully.');
             //return redirect()->route('slider.index')->with('message','Slider is Inserted Successfully.');
-            return back();
+            return redirect()->route('product.index');
 
         }catch(QueryException $e){
 

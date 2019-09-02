@@ -14,18 +14,12 @@ class CartController extends Controller
      */
     public function index()
     {
-      try{
-
+      $currentSession = session()->getId();
+          //$carts = Cart::all()->where('sid','=',$currentSession);
+          //dd($carts);
           $carts = Cart::all();
           return view('table.carts.index', compact('carts'));
 
-      }catch(QueryException $e){
-
-          return redirect()
-              ->route('404_blade')
-              ->withInput()
-              ->withErrors($e->getMessage());
-      }
     }
 
     /**
@@ -49,6 +43,10 @@ class CartController extends Controller
 
             //dd($request->input());
             //dd($request->all());
+            $currentSession = session()->getId();
+
+            //dd($data);
+
         try{
               //dd($request->input());
               //dd($request->hasFile('image'));
@@ -62,6 +60,7 @@ class CartController extends Controller
                   $data['picture'] = null;
               }
               //dd($data['picture']);
+              $data['sid'] = $currentSession;
               Cart::create($data);
 
               //return redirect()->route('labs.index')->withMessage('Lab is Inserted Successfully.');
@@ -157,21 +156,22 @@ class CartController extends Controller
         }
     }
 
-    public function display($id){
-      $product = Product::findOrFail($id);
-      //dd($product);
-      return view('table.carts.cart', compact('product'));
-    }
+    // public function display($id){
+    //   $product = Product::findOrFail($id);
+    //   //dd($product);
+    //   return view('table.carts.cart', compact('product'));
+    // }
 
     public function cartStore(Request $request){
 
        //dd($request);
        $data = $request->all();
+       $total_price = $data['unite_price'] * $data['qty'];
+       $data['total_price'] = $total_price;
+       //dd($data);
        Cart::create($data);
 
-       //return redirect()->route('labs.index')->withMessage('Lab is Inserted Successfully.');
-       //return redirect()->route('slider.index')->with('message','Slider is Inserted Successfully.');
-       return back();
+      return view('table.carts.cart');
 
     }
 }

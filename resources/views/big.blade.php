@@ -5,6 +5,7 @@
 @endsection
 
 @section('content')
+
 <!--video-->
 <!-- <div data-vide-bg="video/video"> -->
 <div data-vide-bg="video/video">
@@ -13,17 +14,23 @@
     <h3>It is a long established fact that a reader will be distracted by
     the readable </h3>
     <div class="search-form">
-      <form action="#" method="post">
-        <input type="text" placeholder="Search..." name="Search...">
-        <input type="submit" value=" " >
-      </form>
+        <form action="/search" method="POST" role="search">
+            {{ csrf_field() }}
+
+            <input type="text" name="q" placeholder="Search..." >
+            <input type="submit" value=" " >
+
+        </form>
     </div>
+
   </div>
   </div>
 </div>
 
   <script>window.jQuery || document.write('<script src="{{asset('js/jquery-1.11.1.min.js')}}"><\/script>')</script>
   <script src="{{asset('js/jquery.vide.min.js')}}"></script>
+
+
 
 <!--content-->
 <div class="content-top ">
@@ -68,11 +75,9 @@
                     </div>
                     <div class="clearfix"></div>
                   </div>
-                  <div class="add">
-
-                        <button class="btn btn-danger my-cart-b " data-id="{{$product->id}}" data-name="{{$product->title}}" data-summary="summary 1" data-price="{{$product->special_price}}" data-quantity="1" data-image="{{ asset('images/product/'.$product->picture) }}">Add to Cart</button>
-
-                  </div>
+                    <div class="add">
+                      <a href="{{url('/single', $product->id)}}" type="submit" class="btn btn-danger my-cart-b ">Add to Cart</a>
+                    </div>
 
                 </div>
               </div>
@@ -109,9 +114,8 @@
                     <div class="clearfix"></div>
                   </div>
                     <div class="add">
-                      <button class="btn btn-danger  my-cart-b " data-id="{{$product->id}}" data-name="{{$product->title}}" data-summary="summary 1" data-price="{{$product->special_price}}" data-quantity="1" data-image="{{ asset('images/product/'.$product->picture) }}">Add to Cart</button>
-
-                  </div>
+                      <a href="{{url('/single', $product->id)}}" type="submit" class="btn btn-danger my-cart-b ">Add to Cart</a>
+                    </div>
                 </div>
               </div>
             </div>
@@ -137,15 +141,15 @@
                     <h6><a href="single.html">{{$product->title}}</a>(6 pcs)</h6>
                   </div>
                   <div class="mid-2">
-                    <p ><label>$2.00</label><em class="item_price">$1.50</em></p>
+                    <p ><label>${{$product->cost}}.00</label><em class="item_price">${{$product->special_price}}.00</em></p>
                       <div class="block">
                       <div class="starbox small ghosting"> </div>
                     </div>
                     <div class="clearfix"></div>
                   </div>
                     <div class="add">
-                     <button class="btn btn-danger  my-cart-b" data-id="9" data-name="Banana" data-summary="summary 9" data-price="1.50" data-quantity="1" data-image="images/of8.png">Add to Cart</button>
-                  </div>
+                      <a href="{{url('/single', $product->id)}}" type="submit" class="btn btn-danger my-cart-b ">Add to Cart</a>
+                    </div>
                 </div>
               </div>
             </div>
@@ -172,14 +176,14 @@
                         <h6><a href="single.html">{{$product->title}}</a>(500 g)</h6>
                       </div>
                       <div class="mid-2">
-                        <p ><label>$2.00</label><em class="item_price">$1.50</em></p>
+                        <p ><label>${{$product->cost}}.00</label><em class="item_price">${{$product->special_price}}.00</em></p>
                           <div class="block">
                           <div class="starbox small ghosting"> </div>
                         </div>
                         <div class="clearfix"></div>
                       </div>
                         <div class="add">
-                          <button class="btn btn-danger my-cart-b" data-id="9" data-name="Banana" data-summary="summary 9" data-price="1.50" data-quantity="1" data-image="images/of8.png">Add to Cart</button>
+                          <a href="{{url('/single', $product->id)}}" type="submit" class="btn btn-danger my-cart-b ">Add to Cart</a>
                         </div>
                     </div>
                   </div>
@@ -317,18 +321,29 @@
                     </div>
                     <div class="clearfix"></div>
                   </div>
-                      <a href="{{url('/single', $product->id)}}" type="submit" class="btn btn-danger my-cart-b ">cart</a>
-                     <button type="submit" class="btn btn-danger my-cart-b ">Add to Cart</button>
+
+                      <div class="add">
+                        <a href="{{url('/single', $product->id)}}" type="submit" class="btn btn-danger my-cart-b ">Add to Cart</a>
+                      </div>
                   </div>
+
 
                 </div>
               </div>
             </div>
-
     @endforeach
             <div class="clearfix"></div>
 
+        <!-- pagination     -->
+        <div>
+
+            {{$products->render()}}
+
+        </div>
+
+
       </div>
+
   </div>
 </div>
 

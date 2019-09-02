@@ -13,11 +13,23 @@
     <h3>It is a long established fact that a reader will be distracted by
     the readable </h3>
     <div class="search-form">
+        <form action="/search" method="POST" role="search">
+            {{ csrf_field() }}
+
+            <input type="text" name="q" placeholder="Search..." name="Search...">
+            <button type="submit" class="btn btn-default">
+
+            </button>
+
+        </form>
+    </div>
+    <div class="search-form">
       <form action="#" method="post">
         <input type="text" placeholder="Search..." name="Search...">
         <input type="submit" value=" " >
       </form>
     </div>
+
   </div>
   </div>
 </div>
@@ -48,8 +60,9 @@
       <div class=" tab-content tab-content-t ">
         <div class="tab-pane active text-style" id="tab1">
           <div class=" con-w3l">
-        @foreach($products as $product)
-          @if($product->is_new === 1 &&  $product->product_type === 'Staples')
+
+        @foreach($offerStaples as $product)
+
             <div class="col-md-3 m-wthree">
               <div class="col-m">
                 <a href="#" data-toggle="modal" data-target="#myModal{{$m=1}}" class="offer-img">
@@ -69,14 +82,14 @@
                   </div>
                   <div class="add">
 
-                        <button class="btn btn-danger my-cart-btn  my-cart-b " data-id="{{$product->id}}" data-name="{{$product->title}}" data-summary="summary 1" data-price="{{$product->special_price}}" data-quantity="1" data-image="{{ asset('images/product/'.$product->picture) }}">Add to Cart</button>
+                        <button class="btn btn-danger my-cart-b " data-id="{{$product->id}}" data-name="{{$product->title}}" data-summary="summary 1" data-price="{{$product->special_price}}" data-quantity="1" data-image="{{ asset('images/product/'.$product->picture) }}">Add to Cart</button>
 
                   </div>
 
                 </div>
               </div>
             </div>
-          @endif
+
         @endforeach
               <div class="clearfix"></div>
            </div>
@@ -88,8 +101,8 @@
 
         <div class="tab-pane  text-style" id="tab2">
           <div class=" con-w3l">
-          @foreach($products as $product)
-            @if($product->is_new === 1 &&  $product->product_type === 'Snacks')
+          @foreach($offerSnacks as $product)
+
             <div class="col-md-3 m-wthree">
               <div class="col-m">
                 <a href="#" data-toggle="modal" data-target="#myModal5" class="offer-img">
@@ -108,13 +121,13 @@
                     <div class="clearfix"></div>
                   </div>
                     <div class="add">
-                      <button class="btn btn-danger my-cart-btn  my-cart-b " data-id="{{$product->id}}" data-name="{{$product->title}}" data-summary="summary 1" data-price="{{$product->special_price}}" data-quantity="1" data-image="{{ asset('images/product/'.$product->picture) }}">Add to Cart</button>
+                      <button class="btn btn-danger  my-cart-b " data-id="{{$product->id}}" data-name="{{$product->title}}" data-summary="summary 1" data-price="{{$product->special_price}}" data-quantity="1" data-image="{{ asset('images/product/'.$product->picture) }}">Add to Cart</button>
 
                   </div>
                 </div>
               </div>
             </div>
-          @endif
+
         @endforeach
             <div class="clearfix"></div>
            </div>
@@ -123,8 +136,8 @@
 
         <div class="tab-pane  text-style" id="tab3">
           <div class=" con-w3l">
-          @foreach($products as $product)
-            @if($product->is_new === 1 &&  $product->product_type === 'Fruits & Vegetables')
+          @foreach($offerFruits as $product)
+
             <div class="col-md-3 m-wthree">
               <div class="col-m">
               <a href="#" data-toggle="modal" data-target="#myModal9" class="offer-img">
@@ -143,13 +156,13 @@
                     <div class="clearfix"></div>
                   </div>
                     <div class="add">
-                     <button class="btn btn-danger my-cart-btn my-cart-b" data-id="9" data-name="Banana" data-summary="summary 9" data-price="1.50" data-quantity="1" data-image="images/of8.png">Add to Cart</button>
+                     <button class="btn btn-danger  my-cart-b" data-id="9" data-name="Banana" data-summary="summary 9" data-price="1.50" data-quantity="1" data-image="images/of8.png">Add to Cart</button>
                   </div>
                 </div>
               </div>
             </div>
 
-           @endif
+
           @endforeach
             <div class="clearfix"></div>
            </div>
@@ -158,8 +171,8 @@
 
         <div class="tab-pane text-style" id="tab4">
             <div class=" con-w3l">
-             @foreach($products as $product)
-              @if($product->is_new === 1 &&  $product->product_type === 'Breakfast & Cereal')
+             @foreach($offerBreakfast as $product)
+
                  <div class="col-md-3 m-wthree">
                   <div class="col-m">
                   <a href="#" data-toggle="modal" data-target="#myModal13" class="offer-img">
@@ -178,12 +191,12 @@
                         <div class="clearfix"></div>
                       </div>
                         <div class="add">
-                          <button class="btn btn-danger my-cart-btn my-cart-b" data-id="9" data-name="Banana" data-summary="summary 9" data-price="1.50" data-quantity="1" data-image="images/of8.png">Add to Cart</button>
+                          <button class="btn btn-danger my-cart-b" data-id="9" data-name="Banana" data-summary="summary 9" data-price="1.50" data-quantity="1" data-image="images/of8.png">Add to Cart</button>
                         </div>
                     </div>
                   </div>
                 </div>
-              @endif
+
             @endforeach
             <div class="clearfix"></div>
            </div>
@@ -296,14 +309,15 @@
       </div>
     </div>
     @foreach($products as $product)
-      @if($product->is_now === 0)
+
         <div class=" con-w3l">
 
             <div class="col-md-3 pro-1">
               <div class="col-m">
+
               <a href="#" data-toggle="modal" data-target="#myModal17" class="offer-img">
                   <img src="{{ asset('images/product/'.$product->picture) }}" class="img-responsive" alt="" height="320px" width="320px">
-                </a>
+              </a>
                 <div class="mid-1">
                   <div class="women">
                     <h6><a href="{{url('/single', $product->id)}}">{{$product->title}}</a>(500 g)</h6>
@@ -315,17 +329,26 @@
                     </div>
                     <div class="clearfix"></div>
                   </div>
-
-                     <button class="btn btn-danger my-cart-btn my-cart-btn " data-id="{{$product->id}}" data-name="{{$product->title}}" data-summary="summary 24" data-price="{{$product->special_price}}" data-quantity="1" data-image="{{ asset('images/product/'.$product->picture) }}">Add to Cart</button>
+                      <a href="{{url('/single', $product->id)}}" type="submit" class="btn btn-danger my-cart-b ">cart</a>
+                     <button type="submit" class="btn btn-danger my-cart-b ">Add to Cart</button>
                   </div>
+
                 </div>
               </div>
             </div>
-        @endif
     @endforeach
             <div class="clearfix"></div>
 
+        <!-- pagination     -->
+        <div>
+
+            {{$products->render()}}
+
+        </div>
+
+
       </div>
+
   </div>
 </div>
 

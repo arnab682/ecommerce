@@ -20,13 +20,21 @@
 // });
 
 
-
-
-
 //..............................................................
-
-
-
+// use Illuminate\Support\Facades\Input;
+// use App\Model\Product;
+// Route::any ( '/search', function () {
+//     $q = Input::get ( 'q' );
+//     if($q != ""){
+//     $product = Product::where ( 'title', 'LIKE', '%' . $q . '%' )->orWhere ( 'short_description', 'LIKE', '%' . $q . '%' )->paginate (5)->setPath ( '' );
+//     $pagination = $product->appends ( array (
+//                 'q' => Input::get ( 'q' )
+//         ) );
+//     if (count ( $product ) > 0)
+//         return view ( '' )->withDetails ( $product )->withQuery ( $q );
+//     }
+//         return view ( '' )->withMessage ( 'No Details found. Try to search again !' );
+// } );
 
 //........................................................
 
@@ -46,7 +54,7 @@ Route::post('/cartshop', 'CartController@cartStore');
 
 //order test
 Route::get('/order', function () {
-    return view('table.carts.cart');
+    return view('theme.order');
 
 });
 

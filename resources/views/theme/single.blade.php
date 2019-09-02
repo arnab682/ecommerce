@@ -40,10 +40,11 @@
      <div class="col-md-7 single-top-left ">
       <form class="" action="{{url('/cartshop')}}" method="post">@csrf
 
-        <input type="text" name="sid" value="{{$sid}}" hidden>
+        <input type="text" name="sid" value="{{session()->getId()}}" hidden>
+        <input value="{{ $product->picture }}" name="picture" hidden>
 
         <div class="single-right">
-           <h3><input type="text" name="name" value="{{$product->title}}" hidden>{{$product->title}}</h3>
+           <h3><input type="text" name="product_title" value="{{$product->title}}" hidden>{{$product->title}}</h3>
 
             <div class="pr-single">
              <p class="reduced ">
@@ -73,8 +74,8 @@
 
              <div class="add add-3">
 
-               <a href="#" type="button" class="btn btn-success  my-cart-btn">Add Cart</a>
-               <button class="btn btn-success" type="submit">Insert Cart</button>
+               <a href="{{url('/order')}}" type="submit" class="btn btn-success  my-cart-btn">Add Cart</a>
+
             </div>
 
           <div class="clearfix"> </div>
@@ -102,7 +103,7 @@
      </div>
            <div class=" con-w3l wthree-of">
             @php
-              $products = App\Model\Product::all();
+              $products = App\Model\Product::paginate(8);
             @endphp
             @foreach($products as $product)
             @if($product->is_new === 1)
@@ -132,7 +133,9 @@
               @endif
             @endforeach
              <div class="clearfix"></div>
+
             </div>
+            
          </div>
        </div>
 

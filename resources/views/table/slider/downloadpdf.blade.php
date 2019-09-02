@@ -1,9 +1,13 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <link href="{{asset('css/bootstrap.css')}}" rel='stylesheet' type='text/css' />
-</head>
-<body>
+@extends('layouts.pdflayout')
+
+@section('content')
+
+  <div class="card">
+
+    <div class="card-header bg-light" style=" text-align: center; ">
+        <h3 style="text-color: dark;"><u>Slider Report</u></h3>
+    </div>
+    <br>
 
     <table  class="table table-bordered">
         <thead class="" style=" text-color: dark;">
@@ -34,13 +38,6 @@
             </tr>
         @endforeach
     </table>
+  </div>
 
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
-
-</body>
+  @endsection

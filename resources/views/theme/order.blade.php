@@ -9,9 +9,6 @@
 <section>
     <div class="container">
       <div class="row">
-<h2 class="title text-center">title</h2>
-
-
 
     <!-- <table class="table table-bordered"> -->
     <div class="content">
@@ -36,26 +33,29 @@
                              <th>Action</th>
                            </tr>
                          </thead>
-
-
-
+@php
+  $currentSession = session()->getId();
+  $carts = App\Model\Cart::all()->where('sid','=',$currentSession);
+@endphp
 
                          <tbody>
+                  @foreach($carts as $cart)
                            <tr>
-                             <td></td>
-                             <td><a href=""></a></td>
-                             <td><img src="" width="100" height="100"></td>
-                             <td></td>
-                             <td></td>
-                             <td></td>
+                             <td>01</td>
+                             <td><a href="">{{$cart->product_id}}</a></td>
+                             <td><img src="{{ asset('images/product/'.$cart->picture) }}" width="100" height="100"></td>
+                             <td>{{$cart->product_title}}</td>
+                             <td>{{$cart->qty}}</td>
+                             <td>{{$cart->total_price}}</td>
                              <td>
 
-                                 {!! Form::open(array('url' => ['',],'onclick'=>"return confirm('Are you sure you want to delete this item?');",'method' => 'DELETE')) !!}
+                                 {!! Form::open(array('url' => [''],'onclick'=>"return confirm('Are you sure you want to delete this item?');",'method' => 'DELETE')) !!}
 
                                  <button type="submit" class="btn btn-primary">Delete</button>
                                  {!! Form::close() !!}
                              </td>
                            </tr>
+                    @endforeach
                          </tbody>
 
                          <tfoot>
@@ -70,8 +70,9 @@
                                 </td>
                             </tr>
                         </tfoot>
-                
+
                      </table>
+
 
                    </div>
 
